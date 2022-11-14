@@ -1,19 +1,24 @@
-import React from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { DropDownMenu } from "./dropdown";
+
 
 export const Navbar = () => {
-	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
-	);
+
+  return (
+    <nav className="navbar">
+        <div className="navbar-brand">
+        <Link to="/">
+          <img
+            className="pokemon-logo"
+            src="https://bignintendonews.files.wordpress.com/2016/09/pokemon-logo_-e1444920307199.jpg"
+          />
+        </Link>
+        </div>
+        <div className="dropdown">
+          <DropDownMenu />
+        </div>
+    </nav>
+  );
 };
