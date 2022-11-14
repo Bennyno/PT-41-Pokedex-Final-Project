@@ -18,6 +18,7 @@ export const Card = (props) => {
           <p className="card-text"><strong>Number:</strong> {(props.index + 1)}</p>
           <p className="card-text"><strong>Type:</strong> {props.type}</p>
           <p className="card-text"><strong>Url:</strong> {props.url}</p>
+          <p>hello</p>	
           <Link to={"/pokemon/" + (props.index + 1)} className="btn btn-danger">
             Learn More
           </Link>
