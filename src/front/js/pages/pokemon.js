@@ -50,3 +50,7 @@ export const Pokemon = (props) => {
 Pokemon.propTypes = {
   match: PropTypes.object,
 };
+
+Pokemon.propTypes = {
+	match: PropTypes.object
+};

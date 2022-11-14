@@ -10,6 +10,7 @@ import {Game} from "./pages/game.js";
 import { Login } from "./pages/login";
 import { SignUp } from "./pages/signup";
 import { Private } from "./pages/private";
+import { Pokemon } from "./pages/pokemon"
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";

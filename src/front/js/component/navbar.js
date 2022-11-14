@@ -41,6 +41,9 @@ export const Navbar = () => {
           <Link to="/game">
             <button className="btn btn-primary">Play Game!</button>
           </Link>
+          <div className="dropdown">
+          <DropDownMenu />
+        </div>
         </div>
       <div className="dropdown">
         <DropDownMenu />

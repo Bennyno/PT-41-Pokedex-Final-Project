@@ -214,6 +214,26 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.error("There is an error when logging in.");
         }
       },
+
+	  getPokemon: () => {
+		return fetch("https://pokeapi.co/api/v2/pokemon?limit=905")
+		.then(response => response.json())
+		.then(json => setStore({
+			pokemon:json.results
+		}))
+		.catch(error => console.log('error', error));
+	},
+
+	setFavorites: (favorite) => {
+		const store = getStore();
+		setStore({ favorites: [...store.favorites, favorite]});
+	},
+
+	deleteFavorites: (favorite) => {
+		const store = getStore();
+		const del = store.favorites.filter(item=>item != favorite);
+		setStore({ favorites: del})
+	},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
