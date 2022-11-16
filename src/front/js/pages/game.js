@@ -46,6 +46,7 @@ export const Game = () => {
 
   return (
     <>
+      {/* Importing a custom Pokemon font. */}
       <style>
         @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
       </style>
@@ -109,7 +110,7 @@ export const Game = () => {
         {!load && (!started || answer !== null) && (
           <div className="App-body">
             {/* They guessed correctly */}
-            {answer=== correct && answer !== null && (
+            {answer === correct && answer !== null && (
               <div className="Answer-div">
                 <img
                   className="Shown-img Poke"
@@ -117,15 +118,21 @@ export const Game = () => {
                   alt="xd"
                 />
                 <div className="Answer-text">
-                <h2>Correct!</h2>
-                <p>
-                  {pokemon[correct].name.charAt(0).toUpperCase() +
-                    pokemon[correct].name.slice(1)}{" "}
-                  was the correct pokemon
-                </p>
-                <div className="Button-div">
-                  <button className="newQuizButton" onClick={() => getPokemon()}>New Quiz</button>
-                </div>
+                  <p>
+                    It's{" "}
+                    {pokemon[correct].name.charAt(0).toUpperCase() +
+                      pokemon[correct].name.slice(1)}
+                    {""}!
+                  </p>
+                  <p>You are correct!</p>
+                  <div className="Button-div">
+                    <button
+                      className="newQuizButton"
+                      onClick={() => getPokemon()}
+                    >
+                      Play Again
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
@@ -139,20 +146,26 @@ export const Game = () => {
                   alt="xd"
                 />
                 <div className="Answer-text">
-                <h2>Wrong!</h2>
-                <p>
-                  {pokemon[correct].name.charAt(0).toUpperCase() +
-                    pokemon[correct].name.slice(1)}{" "}
-                  was the correct pokemon
-                </p>
-                <p>
-                  you guessed it was{" "}
-                  {pokemon[answer].name.charAt(0).toUpperCase() +
-                    pokemon[answer].name.slice(1)}
-                </p>
-                <div className="Button-div">
-                  <button className="newQuizButton" onClick={() => getPokemon()}>New Quiz</button>
-                </div>
+                  <p>
+                    It's{" "}
+                    {pokemon[correct].name.charAt(0).toUpperCase() +
+                      pokemon[correct].name.slice(1)}
+                    {""}!
+                  </p>
+                  <p>
+                    You guessed it was{" "}
+                    {pokemon[answer].name.charAt(0).toUpperCase() +
+                      pokemon[answer].name.slice(1)}
+                    {""}. Try again!
+                  </p>
+                  <div className="Button-div">
+                    <button
+                      className="newQuizButton"
+                      onClick={() => getPokemon()}
+                    >
+                      Play Again
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
@@ -160,7 +173,9 @@ export const Game = () => {
             {/* if the quiz has been answered, give the option to reset */}
             {!started && (
               <div className="Body-contents">
-                <button className="startButton" onClick={() => getPokemon()}>New Quiz</button>
+                <button className="startButton" onClick={() => getPokemon()}>
+                  Start Quiz
+                </button>
               </div>
             )}
           </div>
