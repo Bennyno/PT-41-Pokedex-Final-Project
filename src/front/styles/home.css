@@ -215,12 +215,11 @@ span.btn.btn-danger.btn-lg {
 }
 
 .Options {
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
 }
 
 button:hover {
-  box-shadow: 0px 4px 10px 4px;
   background-color: #fff6d1;
   overflow: visible;
 }
@@ -241,9 +240,13 @@ button:hover {
 .ButtonsGuesses {
   padding: 4px;
 }
+
 .Answer-text{
-    padding-top: 5%;
-    color: black;
+    padding-top: 3%;
+    font-size: 40px;
+    color: #FFCB05;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #3A5EA8;
     font-family: "Pokemon Solid", sans-serif;
 }
 
@@ -256,10 +259,10 @@ button:hover {
 }
 
 .startButton{
-    background: none;;
-    border: none;
     font-weight: 600;
-    font-size: 14px;
+    border: 2px solid red;
+    color:#3A5EA8;
+    font-size: 15px;
     padding: 10px 36px;
     border-radius: 8px;
     cursor: pointer;
@@ -269,18 +272,15 @@ button:hover {
 }
 
 .startButton:hover{
-    box-shadow: 0px 4px 10px 4px;
-    background-color: white;
-    overflow: visible;
-    margin-bottom: 10px;
-
+  background-color: #FFCB05;
+  overflow: visible;
+  margin-bottom: 10px;
 }
 
 .newQuizButton{
-    background: none;;
-    border: none;
-    font-weight: 600;
-    font-size: 14px;
+    background: none;
+    font-size: 25px;
+    border: 2px solid red;
     padding: 10px 36px;
     border-radius: 8px;
     cursor: pointer;
@@ -291,22 +291,27 @@ button:hover {
 }
 
 .newQuizButton:hover{
-    box-shadow: 0px 4px 10px 4px;
-    background-color: white;
+    background-color: #FFCB05;
     overflow: visible;
     margin-bottom: 10px;
-
 }
 
 .Guess{
     background: #fff;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 25px;
     padding: 10px 36px;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease-out;
     overflow: visible;
-    border: 2px solid black;
+    color:#3A5EA8;
+    border: 2px solid red;
     margin-bottom: 10px;
+}
+
+.Guess:hover{
+  color:#3A5EA8;
+  background-color: #FFCB05;
+  overflow: visible;
 }
