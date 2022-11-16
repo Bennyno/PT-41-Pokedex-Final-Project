@@ -66,25 +66,25 @@ export const Game = () => {
               </div>
               <div className="Options">
                 <div className="ButtonsGuesses">
-                  <button onClick={() => answerUpdate(0)}>
+                  <button className="Guess" onClick={() => answerUpdate(0)}>
                     {pokemon[0].name.charAt(0).toUpperCase() +
                       pokemon[0].name.slice(1)}
                   </button>
                 </div>
                 <div className="ButtonsGuesses">
-                  <button onClick={() => answerUpdate(1)}>
+                  <button className="Guess" onClick={() => answerUpdate(1)}>
                     {pokemon[1].name.charAt(0).toUpperCase() +
                       pokemon[1].name.slice(1)}
                   </button>
                 </div>
                 <div className="ButtonsGuesses">
-                  <button onClick={() => answerUpdate(2)}>
+                  <button className="Guess" onClick={() => answerUpdate(2)}>
                     {pokemon[2].name.charAt(0).toUpperCase() +
                       pokemon[2].name.slice(1)}
                   </button>
                 </div>
                 <div className="ButtonsGuesses">
-                  <button onClick={() => answerUpdate(3)}>
+                  <button className="Guess" onClick={() => answerUpdate(3)}>
                     {pokemon[3].name.charAt(0).toUpperCase() +
                       pokemon[3].name.slice(1)}
                   </button>
@@ -124,7 +124,7 @@ export const Game = () => {
                   was the correct pokemon
                 </p>
                 <div className="Button-div">
-                  <button onClick={() => getPokemon()}>New Quiz</button>
+                  <button className="newQuizButton" onClick={() => getPokemon()}>New Quiz</button>
                 </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@ export const Game = () => {
                     pokemon[answer].name.slice(1)}
                 </p>
                 <div className="Button-div">
-                  <button onClick={() => getPokemon()}>New Quiz</button>
+                  <button className="newQuizButton" onClick={() => getPokemon()}>New Quiz</button>
                 </div>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export const Game = () => {
             {/* if the quiz has been answered, give the option to reset */}
             {!started && (
               <div className="Body-contents">
-                <button onClick={() => getPokemon()}>New Quiz</button>
+                <button className="startButton" onClick={() => getPokemon()}>New Quiz</button>
               </div>
             )}
           </div>
