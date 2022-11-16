@@ -6,6 +6,7 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Pokemon } from "./pages/pokemon"
+import {Game} from "./pages/game.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -26,10 +27,11 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Pokemon />} path="/pokemon/:id" />
                         <Route element={<Demo />} path="/demo" />
+                        <Route element={<Game />} path="/game" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
-                    <Footer />
+                    {/* <Footer /> */}
                 </ScrollToTop>
             </BrowserRouter>
         </div>
