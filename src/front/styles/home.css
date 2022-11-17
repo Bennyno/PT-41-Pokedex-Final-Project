@@ -406,8 +406,13 @@ button.dropdown-basic.dropdown-toggle.btn.btn-primary {
 .card-body {
   padding: 5px;
   margin: 4px;
-  border: solid 1px red ;
+  border: solid 1px lightgray ;
   width: 20rem;
+}
+
+.pokemon-card {
+  width: 20vw;
+  margin: 2.5vw;
 }
 
 /*Individual Card Animation*/
@@ -432,10 +437,6 @@ button.dropdown-basic.dropdown-toggle.btn.btn-primary {
   }
 }
 
-h5 {
-  text-transform: capitalize;
-}
-
 /*Styles for buttons in the Card*/
 .pokeball-button {
   border: none;
@@ -452,6 +453,14 @@ h5 {
 }
 
 /*Overall Card Display*/
+h5 {
+  text-transform: capitalize;
+}
+
+p.card-text {
+  text-transform: capitalize;
+}
+
 .card { 
   display: flex;
   width: auto;
@@ -459,7 +468,40 @@ h5 {
   flex-wrap: wrap;
 }
 
-/*Back Home button from learn more page*/
-span.btn.btn-primary.btn-lg {
-  background-color: #0D6EFD;
+/*Styles For Individual Pokemon Pages*/
+.soloimg {
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
 }
+
+.display-4 {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.single {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.detail {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+/*Back Home button from learn more page*/
+span.btn.btn-danger.btn-lg {
+  /* background-color: #0D6EFD; */
+  display: block;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+

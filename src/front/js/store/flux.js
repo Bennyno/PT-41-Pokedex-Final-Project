@@ -215,15 +215,29 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-	  getPokemon: () => {
-		return fetch("https://pokeapi.co/api/v2/pokemon?limit=905")
-		.then(response => response.json())
-		.then(json => setStore({
-			pokemon:json.results
-		}))
-		.catch(error => console.log('error', error));
-	},
-
+      getPokemon: () => {
+        console.log(getStore().pokemon)
+      	const promises = [];
+        const old_pokemon = getStore().pokemon;
+      	for (let i = old_pokemon.length + 1; i <= Math.min(905, old_pokemon.length + 20); i++) {
+      		const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+      		promises.push(fetch(url).then((res) => res.json()));
+          console.log("Fetch request created", i)
+      	}
+      	Promise.all(promises).then((results) => {
+      			 results.forEach((result) => old_pokemon.push({
+      			name: result.name,
+            // image: result.sprites['front_default'],
+      			image: `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${("00" + (result.id)).slice(-3)}.png`, 
+      			type: result.types.map((type) => type.type.name).join(', '),
+            abilities: result.abilities.map((ability) => ability.ability.name).join(', '),
+            stat_names: result.stats.map((stats) => stats.stat.name).join(', '),
+            stats: result.stats.map((stats) => stats.base_stat).join(', '),
+      			id: result.id
+      		}))
+          setStore({pokemon:old_pokemon})
+      });
+      },
 	setFavorites: (favorite) => {
 		const store = getStore();
 		setStore({ favorites: [...store.favorites, favorite]});

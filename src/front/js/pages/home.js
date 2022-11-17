@@ -4,7 +4,6 @@ import { PokemonCard } from "../component/card";
 import InfiniteScroll from "react-infinite-scroll-component";
 import "../../styles/home.css";
 
-
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [ render, rerender] = useState(true)
