@@ -1,112 +1,141 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			pokemon: [],
-			favorites: [],
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			
-			// getPokemon: () => {
-			// 	const promises = [];
-			// 	for (let i = 1; i <= 905; i++) {
-			// 		const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-			// 		promises.push(fetch(url).then((res) => res.json()));
-			// 	}
-			// 	Promise.all(promises).then((results) => setStore({
-			// 			pokemon: results.map((result) => ({
-			// 			name: result.name,
-			// 			image: result.sprites['front_default'],
-			// 			type: result.types.map((type) => type.type.name).join(', '),
-			// 			id: result.id
-			// 		}))
-			// 	}));
-			// },
+  return {
+    store: {
+      pokemon: [],
+      favorites: [],
+      message: null,
+      demo: [
+        {
+          title: "FIRST",
+          background: "white",
+          initial: "white",
+        },
+        {
+          title: "SECOND",
+          background: "white",
+          initial: "white",
+        },
+      ],
+    },
+    actions: {
+      // Use getActions to call a function within a fuction
 
-			// getPokemon: () => {
-			// 	for (let i = 1; i <= 905; i++) {
-			// const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-			// fetch(url)
-			// .then((response) => {
-			// 	return response.json()
-			// })
-			// .then((data) => {
-			// 	console.log(data);
-			// 	const pokemon = {};
-			// 	pokemon['name'] = data.name,
-			// 	pokemon['id'] = data.id,
-			// 	pokemon['image'] = data.sprites["front_dafault"],
-			// 	pokemon['type'] = data.types
-			// 	.map((type) => type.type.name)
-			// 	.join(", ");
-			// })}},
+      getPokemon: () => {
+        console.log(getStore().pokemon)
+      	const promises = [];
+        const old_pokemon = getStore().pokemon;
+      	for (let i = old_pokemon.length + 1; i <= Math.min(905, old_pokemon.length + 20); i++) {
+      		const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+      		promises.push(fetch(url).then((res) => res.json()));
+          console.log("Fetch request created", i)
+      	}
+      	Promise.all(promises).then((results) => {
+      			 results.forEach((result) => old_pokemon.push({
+      			name: result.name,
+            // image: result.sprites['front_default'],
+      			image: `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${("00" + (result.id)).slice(-3)}.png`, 
+      			type: result.types.map((type) => type.type.name).join(', '),
+            abilities: result.abilities.map((ability) => ability.ability.name).join(', '),
+            stat_names: result.stats.map((stats) => stats.stat.name).join(', '),
+            stats: result.stats.map((stats) => stats.base_stat).join(', '),
+      			id: result.id
+      		}))
+          setStore({pokemon:old_pokemon})
+      });
+      },
 
+      // getPokemon: () => {+
+      //   const requests = [];
+      //   const pokeman = [];
+      //   let ok = 0;
+      //   let m_pkmn = 905;
 
-			getPokemon: () => {
-				return fetch("https://pokeapi.co/api/v2/pokemon?limit=905")
-				.then(response => response.json())
-				.then(json => setStore({
-					pokemon:json.results
-				}))
-				.catch(error => console.log('error', error));
-			},
+      //   for (let i = 1; i <= m_pkmn; i++) {
+      //     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+      //     requests.push(fetch(url));
+      //   }
+         
+      //   Promise.all(requests).then((responses) => {
+      //     responses.forEach((response) => {
+      //       if (response.ok) {
+      //         ok++;
+      //       }
+      //       response
+      //         .json()
+      //         .then((data) => {
+      //           const api_pkmn = {
+      //             name: data.name,
+      //             id: data.id,
+      //             image: data.sprites["front_default"],
+      //             type: data.types.map((type) => type.type.name).join(", "),
+      //           };
 
-			setFavorites: (favorite) => {
-				const store = getStore();
-				setStore({ favorites: [...store.favorites, favorite]});
-			},
+      //           pokeman.push(api_pkmn);
+      //         })
+      //         .then(() => {
+      //           console.log(pokeman.length);
+      //           if (pokeman.length) {
+      //             setStore({
+      //               pokemon: pokeman,
+      //             });
+      //           }
+      //         });
+      //     });
+      //   }).then(() => console.log("Final", pokeman.length));
+      // },
 
-			deleteFavorites: (favorite) => {
-				const store = getStore();
-				const del = store.favorites.filter(item=>item != favorite);
-				setStore({ favorites: del})
-			},
+      // getPokemon: () => {
+      // 	return fetch("https://pokeapi.co/api/v2/pokemon?limit=905")
+      // 	.then(response => response.json())
+      // 	.then(json => setStore({
+      // 		pokemon:json.results
+      // 	}))
+      // 	.catch(error => console.log('error', error));
+      // },
 
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+      setFavorites: (favorite) => {
+        const store = getStore();
+        setStore({ favorites: [...store.favorites, favorite] });
+      },
 
-			getMessage: async () => {
-				try{
-					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const data = await resp.json()
-					setStore({ message: data.message })
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
-				}
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+      deleteFavorites: (favorite) => {
+        const store = getStore();
+        const del = store.favorites.filter((item) => item != favorite);
+        setStore({ favorites: del });
+      },
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+      exampleFunction: () => {
+        getActions().changeColor(0, "green");
+      },
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
+      getMessage: async () => {
+        try {
+          // fetching data from the backend
+          const resp = await fetch(process.env.BACKEND_URL + "/api/hello");
+          const data = await resp.json();
+          setStore({ message: data.message });
+          // don't forget to return something, that is how the async resolves
+          return data;
+        } catch (error) {
+          console.log("Error loading message from backend", error);
+        }
+      },
+      changeColor: (index, color) => {
+        //get the store
+        const store = getStore();
+
+        //we have to loop the entire demo array to look for the respective index
+        //and change its color
+        const demo = store.demo.map((elm, i) => {
+          if (i === index) elm.background = color;
+          return elm;
+        });
+
+        //reset the global store
+        setStore({ demo: demo });
+      },
+    },
+  };
 };
 
 export default getState;
