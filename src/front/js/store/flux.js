@@ -106,10 +106,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ favorites: del });
         },
   
-        exampleFunction: () => {
-          getActions().changeColor(0, "green");
-        },
-  
         login: async (email, password) => {
           const opts = {
             method: "POST",
@@ -124,7 +120,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
           try {
             const resp = await fetch(
-              process.env.BACKEND_URL + "/api/login",
+              process.env.BACKEND_URL +"/api/login",
               opts
             );
             if (resp.status !== 200) {
@@ -142,7 +138,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         verifyUser: (token) => {
           fetch(
-        process.env.BACKEND_URL +"/api/protected",
+            process.env.BACKEND_URL +"api/protected",
             {
               method: "GET",
               headers: { Authorization: `Bearer ${token}` },
@@ -161,7 +157,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
         signup: (email, password) => {
           fetch(
-        process.env.BACKEND_URL + "/api/signup",
+            process.env.BACKEND_URL +"api/signup",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -182,99 +178,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         logout: () => {
           sessionStorage.removeItem("token");
           setStore({ token: null });
-        },
-  
-        login: async (email, password) => {
-          const opts = {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              email: email,
-              password: password,
-            }),
-          };
-  
-          try {
-            const resp = await fetch(
-              process.env.BACKEND_URL + "/api/login",
-              opts
-            );
-            if (resp.status !== 200) {
-              alert("There was an error.");
-              return false;
-            }
-            const data = await resp.json();
-            console.log("This came from the backend", data);
-            sessionStorage.setItem("token", data.access_token);
-            setStore({ token: data.access_token });
-            return true;
-          } catch (error) {
-            console.error("There is an error when logging in.");
-          }
-        },
-  
-        getPokemon: () => {
-          console.log(getStore().pokemon)
-          const promises = [];
-          const old_pokemon = getStore().pokemon;
-          for (let i = old_pokemon.length + 1; i <= Math.min(905, old_pokemon.length + 20); i++) {
-            const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-            promises.push(fetch(url).then((res) => res.json()));
-            console.log("Fetch request created", i)
-          }
-          Promise.all(promises).then((results) => {
-               results.forEach((result) => old_pokemon.push({
-              name: result.name,
-              // image: result.sprites['front_default'],
-              image: `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${("00" + (result.id)).slice(-3)}.png`, 
-              type: result.types.map((type) => type.type.name).join(', '),
-              abilities: result.abilities.map((ability) => ability.ability.name).join(', '),
-              stat_names: result.stats.map((stats) => stats.stat.name).join(', '),
-              stats: result.stats.map((stats) => stats.base_stat).join(', '),
-              id: result.id
-            }))
-            setStore({pokemon:old_pokemon})
-        });
-        },
-    setFavorites: (favorite) => {
-      const store = getStore();
-      setStore({ favorites: [...store.favorites, favorite]});
-    },
-  
-    deleteFavorites: (favorite) => {
-      const store = getStore();
-      const del = store.favorites.filter(item=>item != favorite);
-      setStore({ favorites: del})
-    },
-
-        getMessage: async () => {
-          try{
-            // fetching data from the backend
-            const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-            const data = await resp.json()
-            setStore({ message: data.message })
-            // don't forget to return something, that is how the async resolves
-            return data;
-          }catch(error){
-            console.log("Error loading message from backend", error)
-          }
         }
-        // changeColor: (index, color) => {
-        // 	//get the store
-        // 	const store = getStore();
-  
-        // 	//we have to loop the entire demo array to look for the respective index
-        // 	//and change its color
-        // 	const demo = store.demo.map((elm, i) => {
-        // 		if (i === index) elm.background = color;
-        // 		return elm;
-        // 	});
-  
-        // 	//reset the global store
-        // 	setStore({ demo: demo });
-        // }
       }
     };
   };
