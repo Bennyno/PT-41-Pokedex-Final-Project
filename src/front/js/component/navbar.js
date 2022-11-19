@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+
 import { DropDownMenu } from "./dropdown";
 
 export const Navbar = () => {
@@ -22,6 +23,7 @@ export const Navbar = () => {
         </Link>
       </div>
       <div className="ml-auto">
+
           {!store.token ? (
             <Link to="/login">
               <button className="btn btn-primary" style={{ margin: "10px" }}>
