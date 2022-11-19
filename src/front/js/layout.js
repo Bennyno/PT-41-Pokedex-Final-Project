@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
+import { Pokemon } from "./pages/pokemon"
 import {Game} from "./pages/game.js";
 import { Login } from "./pages/login";
 import { SignUp } from "./pages/signup";
@@ -27,6 +28,7 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
+                        <Route element={<Pokemon />} path="/pokemon/:id" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Game />} path="/game" />
                         <Route element={<Login />} path="/login" />

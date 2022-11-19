@@ -1,26 +1,67 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+import { PokemonCard } from "../component/card";
+import InfiniteScroll from "react-infinite-scroll-component";
 import "../../styles/home.css";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
+  const [ render, rerender] = useState(true)
 
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
-			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
-		</div>
-	);
+  useEffect(() => {
+    actions.getPokemon();
+  }, []);
+
+  const load_pokemon = () => {
+    actions.getPokemon();
+    rerender(!render);
+  }
+
+    //   return(
+    // 	<>
+    // 	<h1 className="pokedex"><strong>Pokedex</strong></h1>
+    //   <div className="card">
+    //   {store.pokemon?.map((pokemon, index) => {
+    //   const paddedId = ("00" + (index + 1)).slice(-3);
+    //   const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
+    // 	  return (
+    // 		<PokemonCard key={index}
+    // 		  name={pokemon.name}
+    // 		  number={pokemon.index}
+    // 		  image={image}
+    // 		  index = {index} />
+    // 	  );
+    // 	})}
+    //   </div>
+    //   </>
+    // )
+
+  return (
+    <>
+      <h1 onClick={actions.getPokemon} className="pokedex">
+        <strong>Pokedex</strong>
+      </h1>
+      <InfiniteScroll
+        dataLength={store.pokemon.length} 
+        next={load_pokemon}
+        hasMore={store.pokemon.length < 905}
+        loader={<h4>Loading...</h4>}
+        >
+        <div className="card">
+        {store.pokemon.map((pokemon, index) => {
+          
+          return (
+            <PokemonCard
+              key={index}
+              image={pokemon.image}
+              name={pokemon.name}
+              type={pokemon.type}
+              index={index}
+            />
+          );
+        })}
+      </div>
+      </InfiniteScroll>
+    </>
+  );
 };
