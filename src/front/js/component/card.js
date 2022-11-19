@@ -17,15 +17,6 @@ export const PokemonCard = (props) => {
         <p className="card-text">
           <strong>Type:</strong> {props.type}
         </p>
-        {/* <p className="card-text">
-          <strong>Abilities:</strong> {props.abilities}
-        </p>
-        <p className="card-text">
-          <strong>Stat Names:</strong> {props.stat_names}
-        </p>
-        <p className="card-text">
-          <strong>Stats:</strong> {props.stats}
-        </p> */}
         <Link to={"/pokemon/" + (props.index)} className="btn btn-danger">
           Learn More
         </Link>

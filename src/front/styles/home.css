@@ -7,7 +7,7 @@
 */
 
 nav.navbar {
-  background-color: black; 
+  background-color: black;
 }
 
 /*Navbar Element Styles*/
@@ -34,7 +34,7 @@ img.pokemon-logo {
 }
 
 .btn-primary:active {
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
   border: none;
 }
 
@@ -53,6 +53,10 @@ button.dropdown-basic.dropdown-toggle.btn.btn-primary {
   color: red;
 }
 
+.nav-pokeballs {
+  margin-left: 1600px;
+}
+
 /*Favorite Pokeball Styles*/
 .ani-spin {
   width: 60px;
@@ -60,27 +64,25 @@ button.dropdown-basic.dropdown-toggle.btn.btn-primary {
 
 /*Favorite Pokeball Animation*/
 .ani-spin:hover {
-  animation:
-  spin 2s 1 ease-in-out,
-  gscale 2s 1 ease-out;
+  animation: spin 2s 1 ease-in-out, gscale 2s 1 ease-out;
 }
 
 @keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(720deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
 }
 
 @keyframes gscale {
-	0% {
-		filter: grayscale(100%);
-	}
-	100% {
-		filter: grayscale(0%);
-	}
+  0% {
+    filter: grayscale(100%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
 }
 
 .pokedex {
@@ -95,13 +97,8 @@ button.dropdown-basic.dropdown-toggle.btn.btn-primary {
 .card-body {
   padding: 5px;
   margin: 4px;
-  border: solid 1px lightgray ;
-  width: 20rem;
-}
-
-.pokemon-card {
-  width: 20vw;
-  margin: 2.5vw;
+  border: solid 1px red;
+  width: 30em;
 }
 
 /*Individual Card Animation*/
@@ -117,7 +114,7 @@ button.dropdown-basic.dropdown-toggle.btn.btn-primary {
   40% {
     transform: translateY(0px);
   }
-  
+
   80% {
     transform: translateY(-2px);
   }
@@ -132,13 +129,13 @@ button.dropdown-basic.dropdown-toggle.btn.btn-primary {
   background: white;
 }
 
-.btn.btn-primary {
-  margin-left: 15px;
+.btn.btn-danger {
+  margin-left: 5px;
 }
 
 .pokeball {
   width: 30px;
-  margin-left: 170px;
+  margin-left: 310px;;
 }
 
 /*Overall Card Display*/
@@ -150,7 +147,7 @@ p.card-text {
   text-transform: capitalize;
 }
 
-.card { 
+.card {
   display: flex;
   width: auto;
   flex-direction: row;
@@ -191,7 +188,6 @@ span.btn.btn-danger.btn-lg {
   width: 200px;
   margin-left: auto;
   margin-right: auto;
- 
 }
 
 .pokemonGame {
@@ -226,282 +222,91 @@ button:hover {
 
 .load {
   font-family: "Pokemon Solid", sans-serif;
-  color: #FFCB05;
+  color: #ffcb05;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #3A5EA8;
+  -webkit-text-stroke-color: #3a5ea8;
 }
 .App-header {
   font-family: "Pokemon Solid", sans-serif;
-  color: #FFCB05;
+  color: #ffcb05;
   -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #3A5EA8;
+  -webkit-text-stroke-color: #3a5ea8;
 }
 
 .ButtonsGuesses {
   padding: 4px;
 }
 
-.Answer-text{
-    padding-top: 3%;
-    font-size: 40px;
-    color: #FFCB05;
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #3A5EA8;
-    font-family: "Pokemon Solid", sans-serif;
+.Answer-text {
+  padding-top: 3%;
+  font-size: 40px;
+  color: #ffcb05;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3a5ea8;
+  font-family: "Pokemon Solid", sans-serif;
 }
 
-.Button-div{
-    font-family: none;
+.Button-div {
+  font-family: none;
 }
 
-.Body-contents{
-    height: 10%;
+.Body-contents {
+  height: 10%;
 }
 
-.startButton{
-    font-weight: 600;
-    border: 2px solid red;
-    color:#3A5EA8;
-    font-size: 15px;
-    padding: 10px 36px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease-out;
-    overflow: visible;
-    margin-bottom: 10px;
-}
-
-.startButton:hover{
-  background-color: #FFCB05;
+.startButton {
+  font-weight: 600;
+  border: 2px solid red;
+  color: #3a5ea8;
+  font-size: 15px;
+  padding: 10px 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
   overflow: visible;
   margin-bottom: 10px;
 }
 
-.newQuizButton{
-    background: none;
-    font-size: 25px;
-    border: 2px solid red;
-    padding: 10px 36px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease-out;
-    overflow: visible;
-    margin-bottom: 10px;
-    
+.startButton:hover {
+  background-color: #ffcb05;
+  overflow: visible;
+  margin-bottom: 10px;
 }
 
-.newQuizButton:hover{
-    background-color: #FFCB05;
-    overflow: visible;
-    margin-bottom: 10px;
+.newQuizButton {
+  background: none;
+  font-size: 25px;
+  border: 2px solid red;
+  padding: 10px 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  overflow: visible;
+  margin-bottom: 10px;
 }
 
-.Guess{
-    background: #fff;
-    font-weight: 600;
-    font-size: 25px;
-    padding: 10px 36px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease-out;
-    overflow: visible;
-    color:#3A5EA8;
-    border: 2px solid red;
-    margin-bottom: 10px;
+.newQuizButton:hover {
+  background-color: #ffcb05;
+  overflow: visible;
+  margin-bottom: 10px;
 }
 
-.Guess:hover{
-  color:#3A5EA8;
-  background-color: #FFCB05;
+.Guess {
+  background: #fff;
+  font-weight: 600;
+  font-size: 25px;
+  padding: 10px 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  overflow: visible;
+  color: #3a5ea8;
+  border: 2px solid red;
+  margin-bottom: 10px;
+}
+
+.Guess:hover {
+  color: #3a5ea8;
+  background-color: #ffcb05;
   overflow: visible;
 }
-
-nav.navbar {
-  background-color: black; 
-}
-
-/*Navbar Element Styles*/
-img.pokemon-logo {
-  width: 150px;
-  margin-left: 100px;
-  border: solid black 1px;
-  background-color: black;
-}
-
-.dropdown {
-  margin-right: 100px;
-  background: none;
-}
-
-.btn-primary {
-  background-color: black;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: black;
-  border: none;
-}
-
-.btn-primary:active {
-  background-color: #F8F9FA;
-  border: none;
-}
-
-/*Favorite List Letters*/
-div.drp.counter {
-  color: white;
-  font-weight: 500;
-}
-
-/*Tiny Arrow Dropdown*/
-button.dropdown-basic.dropdown-toggle.btn.btn-primary {
-  color: white;
-}
-
-.delete {
-  color: red;
-}
-
-/*Favorite Pokeball Styles*/
-.ani-spin {
-  width: 60px;
-}
-
-/*Favorite Pokeball Animation*/
-.ani-spin:hover {
-  animation:
-  spin 2s 1 ease-in-out,
-  gscale 2s 1 ease-out;
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(720deg);
-	}
-}
-
-@keyframes gscale {
-	0% {
-		filter: grayscale(100%);
-	}
-	100% {
-		filter: grayscale(0%);
-	}
-}
-
-.pokedex {
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-size: 60px;
-  color: red;
-}
-
-/*Individual Card Style*/
-.card-body {
-  padding: 5px;
-  margin: 4px;
-  border: solid 1px lightgray ;
-  width: 20rem;
-}
-
-.pokemon-card {
-  width: 20vw;
-  margin: 2.5vw;
-}
-
-/*Individual Card Animation*/
-.card-body:hover {
-  animation: bounce 0.5s linear;
-  border: solid 3px red;
-}
-
-@keyframes bounce {
-  20% {
-    transform: translateY(-6px);
-  }
-  40% {
-    transform: translateY(0px);
-  }
-  
-  80% {
-    transform: translateY(-2px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/*Styles for buttons in the Card*/
-.pokeball-button {
-  border: none;
-  background: white;
-}
-
-.btn.btn-primary {
-  margin-left: 15px;
-}
-
-.pokeball {
-  width: 30px;
-  margin-left: 170px;
-}
-
-/*Overall Card Display*/
-h5 {
-  text-transform: capitalize;
-}
-
-p.card-text {
-  text-transform: capitalize;
-}
-
-.card { 
-  display: flex;
-  width: auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-/*Styles For Individual Pokemon Pages*/
-.soloimg {
-  display: block;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
-}
-
-.display-4 {
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: 800;
-}
-
-.single {
-  text-align: center;
-  text-transform: capitalize;
-}
-
-.detail {
-  text-align: center;
-  text-transform: capitalize;
-  font-size: x-large;
-  font-weight: 600;
-}
-
-/*Back Home button from learn more page*/
-span.btn.btn-danger.btn-lg {
-  /* background-color: #0D6EFD; */
-  display: block;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
- 
-}
-
-

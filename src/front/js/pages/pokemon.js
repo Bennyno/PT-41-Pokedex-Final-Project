@@ -6,18 +6,10 @@ import { Context } from "../store/appContext";
 export const Pokemon = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
-  // const [pokemon, setPokemon] = useState();
 
-  // {store.pokemon.map((pokemon, index) => {
-  // const paddedId = ('00' + (index + 1)).slice(-3);
-  // const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${params.id}.png`
-  // })}
-  // useEffect(()=> {
-  // 	 fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
-  // 			.then(response => response.json())
-  // 			.then(json => setPokemon(json))
-  // 			.catch(error => console.log('error', error));
-  // }, [])
+  <style>
+  @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+  </style>
 
   const data = store.pokemon[params.id];
   return (
