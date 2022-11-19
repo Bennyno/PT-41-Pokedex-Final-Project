@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useContext }, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { DropDownMenu } from "./dropdown";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -45,9 +47,6 @@ export const Navbar = () => {
           <DropDownMenu />
         </div>
         </div>
-      <div className="dropdown">
-        <DropDownMenu />
-      </div>
     </nav>
   );
 };
