@@ -51,6 +51,11 @@ button.dropdown-basic.dropdown-toggle.btn.btn-primary {
 
 .delete {
   color: red;
+  margin-left: 5px;
+}
+
+a.dropdown-item {
+  text-transform: capitalize;
 }
 
 .nav-pokeballs {

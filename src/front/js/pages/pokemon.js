@@ -66,7 +66,7 @@ export const Pokemon = (props) => {
         <p className="single"><strong>Number:</strong> {data.id}</p>
         <p className="single"><strong>Abilities:</strong> {data.abilities}</p>
         <p className="single"><strong>Stat Names:</strong> {data.stat_names}</p>
-		<p className="single"><strong>Stats:</strong> {data.stats}</p>
+		    <p className="single"><strong>Stats:</strong> {data.stats}</p>
         <p className="detail">
           This is {data.name}. <br></br>
 		  It is a {data.type} type pokemon and it's pokedex number is {data.id}. <br></br>
@@ -87,6 +87,3 @@ Pokemon.propTypes = {
   match: PropTypes.object,
 };
 
-Pokemon.propTypes = {
-	match: PropTypes.object
-};
