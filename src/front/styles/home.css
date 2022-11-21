@@ -59,7 +59,7 @@ a.dropdown-item {
 }
 
 .nav-pokeballs {
-  margin-left: 1600px;
+ display: flex;
 }
 
 /*Favorite Pokeball Styles*/
@@ -192,9 +192,9 @@ p.card-text {
   font-weight: 600;
 }
 
-a {
+/* a {
   margin-bottom: 10px;
-}
+} */
 
 /*Back Home button from learn more page*/
 span.btn.btn-danger.btn-lg {
