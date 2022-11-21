@@ -353,3 +353,8 @@ button:hover {
 .typing{
   margin-left:1px
 }
+
+.statsGraph{
+  margin: 15px;
+  width: 25%
+}

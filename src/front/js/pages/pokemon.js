@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { ProgressBar } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
@@ -38,7 +39,20 @@ export const Pokemon = (props) => {
   const trimmedData = typing.map(types => {
     return types.trim()
   })
-  console.log(data);
+
+  const allStateNames = data.stat_names.split(",");
+  const trimmedNames = allStateNames.map(names => {
+    return names.trim()
+  })
+
+  const allStatsNums = data.stats.split(",");
+  const trimmedStats = allStatsNums.map(stats => {
+    return stats.trim(trimmedStats)
+  })
+  console.log(trimmedStats);
+  for (let i = 0; i < trimmedNames.length; i++){  
+    console.log(trimmedNames[i]);}
+
 
   return (
     <div className="jumbotron">
@@ -72,6 +86,21 @@ export const Pokemon = (props) => {
 		  It is a {data.type} type pokemon and it's pokedex number is {data.id}. <br></br>
 		  It has the abilities {data.abilities} and it's {data.stat_names} stats are {data.stats} respectively. 
         </p>
+      </div>
+      <div className= "statsGraph">
+      <h4>Base Stats</h4>
+            <strong>{trimmedNames[0].toUpperCase()}</strong>
+            <ProgressBar now={trimmedStats[0]} max={255} label={trimmedStats[0]} />
+            <strong>{trimmedNames[1].toUpperCase().toUpperCase()}</strong>
+            <ProgressBar now={trimmedStats[1]} max={255} label={trimmedStats[1]} />
+            <strong>{trimmedNames[2].toUpperCase()}</strong>
+            <ProgressBar now={trimmedStats[2]} max={255} label={trimmedStats[2]} />
+            <strong>{trimmedNames[3].toUpperCase()}</strong>
+            <ProgressBar now={trimmedStats[3]} max={255} label={trimmedStats[3]} />
+            <strong>{trimmedNames[4].toUpperCase()}</strong>
+            <ProgressBar now={trimmedStats[4]} max={255} label={trimmedStats[4]} />
+            <strong>{trimmedNames[5].toUpperCase()}</strong>
+            <ProgressBar now={trimmedStats[5]} max={255} label={trimmedStats[5]} />
       </div>
       <hr className="my-4" />
       <Link to="/">

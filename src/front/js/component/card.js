@@ -31,7 +31,7 @@ export const PokemonCard = (props) => {
   const data = typing.map(types => {
     return types.trim()
   })
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="card pokemon-card">
