@@ -29,7 +29,7 @@ export const Game = () => {
     for (let i = 0; i < 4; i++) {
       num = Math.floor(Math.random() * 905) + 1;
 
-      response = await fetch(`${process.env.BACKEND_URL}/api/pokemon/${i}`);
+      response = await fetch(`${process.env.BACKEND_URL}/api/pokemon/${num}`);
       if (!response.ok) {
         alert("failed to retrieve pokemon");
         return;
