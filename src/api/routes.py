@@ -16,13 +16,13 @@ api = Blueprint('api', __name__)
 def get_pokemon_id(id):
     return jsonify(
         requests.get(f'https://pokeapi.co/api/v2/pokemon/{id}').json()
-    )
+    ), 200
 
 @api.route("/pokemon/<string:name>", methods=["GET"])
 def get_pokemon_name(name):
     return jsonify(
         requests.get(f'https://pokeapi.co/api/v2/pokemon/{name}').json()
-    )
+    ), 200
 
 @api.route("/protected", methods=["GET"])
 @jwt_required()
