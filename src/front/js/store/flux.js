@@ -15,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const promises = [];
           const old_pokemon = getStore().pokemon;
           for (let i = old_pokemon.length + 1; i <= Math.min(905, old_pokemon.length + 20); i++) {
-            const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+            const url = `${process.env.BACKEND_URL}/api/pokemon/${i}`;
             promises.push(fetch(url).then((res) => res.json()));
             console.log("Fetch request created", i)
           }

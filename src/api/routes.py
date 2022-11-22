@@ -8,8 +8,21 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
+import requests
 
 api = Blueprint('api', __name__)
+
+@api.route("/pokemon/<int:id>", methods=["GET"])
+def get_pokemon_id(id):
+    return jsonify(
+        requests.get(f'https://pokeapi.co/api/v2/pokemon/{id}').json()
+    )
+
+@api.route("/pokemon/<string:name>", methods=["GET"])
+def get_pokemon_name(name):
+    return jsonify(
+        requests.get(f'https://pokeapi.co/api/v2/pokemon/{name}').json()
+    )
 
 @api.route("/protected", methods=["GET"])
 @jwt_required()
