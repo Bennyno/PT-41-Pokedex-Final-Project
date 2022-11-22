@@ -29,24 +29,21 @@ export const Pokemon = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  <style>
-  @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
-  </style>
+  useEffect(()=>{
+    console.log(process.env.BACKEND_URL)
+  },[]) 
 
   const data = store.pokemon[params.id];
 
-  const typing = data.type.split(",");
-  const trimmedData = typing.map(types => {
+  const trimmedData = data.type.split(",").map(types => {
     return types.trim()
   })
 
-  const allStateNames = data.stat_names.split(",");
-  const trimmedNames = allStateNames.map(names => {
+  const trimmedNames = data.stat_names.split(",").map(names => {
     return names.trim()
   })
 
-  const allStatsNums = data.stats.split(",");
-  const trimmedStats = allStatsNums.map(stats => {
+  const trimmedStats = data.stats.split(",").map(stats => {
     return stats.trim(trimmedStats)
   })
   console.log(trimmedStats);

@@ -6,18 +6,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         token: null,
         errorMessage: null,
         message: null,
-        demo: [
-          {
-            title: "FIRST",
-            background: "white",
-            initial: "white",
-          },
-          {
-            title: "SECOND",
-            background: "white",
-            initial: "white",
-          },
-        ],
       },
       actions: {
         // Use getActions to call a function within a fuction
@@ -138,7 +126,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         verifyUser: (token) => {
           fetch(
-            process.env.BACKEND_URL +"api/protected",
+            process.env.BACKEND_URL +"/api/protected",
             {
               method: "GET",
               headers: { Authorization: `Bearer ${token}` },
@@ -157,7 +145,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
         signup: (email, password) => {
           fetch(
-            process.env.BACKEND_URL +"api/signup",
+            process.env.BACKEND_URL+ "/api/signup",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },

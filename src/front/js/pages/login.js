@@ -20,7 +20,7 @@ export const Login = () => {
     <div className="container form">
     <form className="box">
     <div className="text-center mt-5">
-      <h1 className="header">Login</h1>
+      <h1 className="header">Log In</h1>
       <div className="text-center">
         No registered yet?{" "}
         <Link to="/signup">
