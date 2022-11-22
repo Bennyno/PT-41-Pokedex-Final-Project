@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +15,7 @@ export const Login = () => {
     actions.login(email, password);
   };
 
-  // if(store.token && store.token != "" && store.token != undefined) navigate("/private");
+  if(store.token && store.token != "" && store.token != undefined) navigate("/");
 
   return (
     <div className="container form">
