@@ -112,7 +112,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               opts
             );
             if (resp.status !== 200) {
-              alert("There was an error.");
+              alert("There was an error with the email or password.");
               return false;
             }
             const data = await resp.json();

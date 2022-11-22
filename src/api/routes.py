@@ -49,14 +49,21 @@ def sign_up():
 # create_access_token() function is used to actually generate the JWT.
 @api.route("/login", methods=["POST"])
 def login():
-    data = request.get_json()
+    data = request.json
     if "email" not in data or data["email"]=="": 
-        return jsonify({"msg": "Bad email."}), 400
+        return jsonify({"msg": "email required."}), 400
     if "password" not in data or data["password"]=="":
-        return jsonify({"msg": "Bad password"}), 400
-    else: 
-        access_token = create_access_token(identity=data["email"])
-        return jsonify(access_token=access_token)
+        return jsonify({"msg": "password required"}), 400
+
+    user = User.query.filter_by(email=data["email"]).first()
+
+    if user is None :
+        return jsonify({"msg": "the email you entered is not associated to any account"}), 400
+    if user.password != data["password"]:
+        return jsonify({"msg": "the password you entered is incorrect"}), 400
+     
+    access_token = create_access_token(identity=data["email"])
+    return jsonify(access_token=access_token),200
 
 # @api.route('/hello', methods=['POST', 'GET'])
 # def handle_hello():
