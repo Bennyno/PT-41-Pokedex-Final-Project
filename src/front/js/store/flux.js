@@ -108,7 +108,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
           try {
             const resp = await fetch(
-              process.env.BACKEND_URL +"/api/login",
+              `${process.env.BACKEND_URL}/api/login`,
               opts
             );
             if (resp.status !== 200) {
@@ -126,7 +126,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         verifyUser: (token) => {
           fetch(
-            process.env.BACKEND_URL +"/api/protected",
+            `${process.env.BACKEND_URL}/api/protected`,
             {
               method: "GET",
               headers: { Authorization: `Bearer ${token}` },
@@ -145,7 +145,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
         signup: (email, password) => {
           fetch(
-            process.env.BACKEND_URL+ "/api/signup",
+            `${process.env.BACKEND_URL}/api/signup`,
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
