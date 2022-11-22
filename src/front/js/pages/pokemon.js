@@ -29,9 +29,9 @@ export const Pokemon = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
-  useEffect(()=>{
-    console.log(process.env.BACKEND_URL)
-  },[]) 
+  // useEffect(()=>{
+  //   console.log(process.env.BACKEND_URL)
+  // },[]) 
 
   const data = store.pokemon[params.id];
 
