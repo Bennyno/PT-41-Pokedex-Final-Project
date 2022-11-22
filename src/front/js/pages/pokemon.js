@@ -56,6 +56,7 @@ export const Pokemon = (props) => {
       <div>
         <img className="soloimg" src={data.image} />
         <h1 className="display-4">{data.name}</h1>
+        <div className="grid">
         <p className="single typingPoke">
         {trimmedData.map((type) => (
           <span
@@ -76,6 +77,7 @@ export const Pokemon = (props) => {
         </p>
         <p className="single"><strong>Number:</strong> {data.id}</p>
         <p className="single"><strong>Abilities:</strong> {data.abilities}</p>
+        </div>
         {/* <p className="single"><strong>Stat Names:</strong> {data.stat_names}</p>
 		    <p className="single"><strong>Stats:</strong> {data.stats}</p> */}
        
