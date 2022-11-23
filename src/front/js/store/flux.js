@@ -25,10 +25,12 @@ const getState = ({ getStore, getActions, setStore }) => {
               // image: result.sprites['front_default'],
               image: `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${("00" + (result.id)).slice(-3)}.png`, 
               type: result.types.map((type) => type.type.name).join(', '),
+              height: result.height,
+              weight: result.weight,
+              id: result.id,
               abilities: result.abilities.map((ability) => ability.ability.name).join(', '),
               stat_names: result.stats.map((stats) => stats.stat.name).join(', '),
               stats: result.stats.map((stats) => stats.base_stat).join(', '),
-              id: result.id
             }))
             setStore({pokemon:old_pokemon})
         });

@@ -30,6 +30,7 @@ export const Navbar = () => {
               </button>
             </Link>
           ) : (
+            <Link to="/">
             <button
               onClick={() => actions.logout()}
               className="btn btn-primary"
@@ -41,6 +42,7 @@ export const Navbar = () => {
               Logout
             </div>
             </button>
+            </Link>
           )}
           <Link to="/game">
             <button className="btn btn-primary">
@@ -52,7 +54,7 @@ export const Navbar = () => {
               </div>
               </button>
           </Link>
-          <Link to="/signup">
+          <Link to="/regions">
             <button className="btn btn-primary">
             <img
             src="https://jenessa-reika.ca/wp-content/uploads/2020/04/pokemon3.png"

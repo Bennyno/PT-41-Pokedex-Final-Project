@@ -90,7 +90,7 @@ a.dropdown-item {
   }
 }
 
-.pokedex {
+.page-title {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -185,6 +185,14 @@ p.card-text {
   text-transform: capitalize;
 }
 
+
+
+.single-last {
+  text-align: center;
+  text-transform: capitalize;
+  padding-bottom: 10px;
+}
+
 .detail {
   text-align: center;
   text-transform: capitalize;
@@ -192,9 +200,20 @@ p.card-text {
   font-weight: 600;
 }
 
-/* a {
-  margin-bottom: 10px;
-} */
+div.grid {
+ /* float: right; 
+ margin-right: 500px; */
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ border-radius: 10px;
+ background-color: #30A7D7;
+ width: 300px; 
+}
+
+span.badge.badge-pill.mr-1 {
+  margin-top: 10px;
+}
 
 /*Back Home button from learn more page*/
 span.btn.btn-danger.btn-lg {
@@ -205,11 +224,17 @@ span.btn.btn-danger.btn-lg {
   margin-right: auto;
 }
 
-div.statsGraph {
+.statsGraph {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  width: 25%
 }
+
+/* .statsGraph{
+  margin: 15px;
+  width: 25%
+} */
 
 .pokemonGame {
   background-image: url("https://external-preview.redd.it/e5zoQw-hgw-LCjdhC_4G8IAcHxex5pzda_BD_FPTcBY.png?auto=webp&s=c0b96b5ec20010a15864b8a0c9b202c119e52fe8");
@@ -374,7 +399,7 @@ button:hover {
   margin-left:1px
 }
 
-.statsGraph{
-  margin: 15px;
-  width: 25%
+
+.regions {
+  width: 500px;
 }

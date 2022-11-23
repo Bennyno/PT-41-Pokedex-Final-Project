@@ -38,7 +38,7 @@ export const Home = () => {
 
   return (
     <>
-      <h1 onClick={actions.getPokemon} className="pokedex">
+      <h1 onClick={actions.getPokemon} className="page-title">
         <strong>Pokedex</strong>
       </h1>
       <InfiniteScroll

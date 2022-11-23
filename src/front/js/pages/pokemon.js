@@ -75,11 +75,12 @@ export const Pokemon = (props) => {
           </span>
         ))}
         </p>
+        
         <p className="single"><strong>Number:</strong> {data.id}</p>
         <p className="single"><strong>Abilities:</strong> {data.abilities}</p>
+        <p className="single"><strong>Height:</strong> {data.height}</p>
+		    <p className="single-last"><strong>Weight:</strong> {data.weight}</p>
         </div>
-        {/* <p className="single"><strong>Stat Names:</strong> {data.stat_names}</p>
-		    <p className="single"><strong>Stats:</strong> {data.stats}</p> */}
        
       <div className= "statsGraph">
       <h4>Base Stats</h4>
@@ -95,12 +96,12 @@ export const Pokemon = (props) => {
             <ProgressBar now={trimmedStats[4]} max={255} label={trimmedStats[4]} />
             <strong>{trimmedNames[5].toUpperCase()}</strong>
             <ProgressBar now={trimmedStats[5]} max={255} label={trimmedStats[5]} />
+      </div>
             <p className="detail">
           This is {data.name}. <br></br>
 		  It is a {data.type} type pokemon and it's pokedex number is {data.id}. <br></br>
 		  It has the abilities {data.abilities} and it's {data.stat_names} stats are {data.stats} respectively. 
         </p>
-      </div>
       </div>
       <hr className="my-4" />
       <Link to="/">
