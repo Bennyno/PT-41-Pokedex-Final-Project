@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
       store: {
+        pokemon_species: [],
         pokemon: [],
         favorites: [],
         token: null,
@@ -35,6 +36,18 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({pokemon:old_pokemon})
         });
         },
+
+        // getPokemonSpecies: (data) => {
+        //   const store = getStore();
+        //   const endpoint = `${process.env.BACKEND_URL}/api/pokemon-species`;
+        //   const config = {
+        //     method: "GET",
+        //   };
+        //   fetch(endpoint, config)
+        //     .then((res) => res.json())
+        //     .then((data) => setStore({ pokemon_species: data.all_species }))
+        //     .catch((err) => err);
+        // },
   
         // getPokemon: () => {+
         //   const requests = [];

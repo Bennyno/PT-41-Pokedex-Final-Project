@@ -24,6 +24,12 @@ def get_pokemon_name(name):
         requests.get(f'https://pokeapi.co/api/v2/pokemon/{name}').json()
     ), 200
 
+# @api.route("/pokemon-species", methods=["GET"])
+# def get_pokemon_species():
+#     return jsonify(
+#         requests.get(f'https://pokeapi.co/api/v2/pokemon-species').json()
+#     ), 200
+
 @api.route("/protected", methods=["GET"])
 @jwt_required()
 def protected():
