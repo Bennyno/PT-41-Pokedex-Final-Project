@@ -77,6 +77,8 @@ export const Pokemon = (props) => {
         </p>
         <p className="single"><strong>Number:</strong> {data.id}</p>
         <p className="single"><strong>Abilities:</strong> {data.abilities}</p>
+        <p className="single"><strong>Height:</strong> {data.height}</p>
+        <p className="single"><strong>Weight:</strong> {data.weight}lbs</p>
         </div>
         {/* <p className="single"><strong>Stat Names:</strong> {data.stat_names}</p>
 		    <p className="single"><strong>Stats:</strong> {data.stats}</p> */}
