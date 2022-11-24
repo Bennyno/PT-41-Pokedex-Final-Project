@@ -56,6 +56,7 @@ export const Home = () => {
               image={pokemon.image}
               name={pokemon.name}
               type={pokemon.type}
+              flavor_text={pokemon.flavor_text}
               index={index}
             />
           );
