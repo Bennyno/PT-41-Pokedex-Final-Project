@@ -236,6 +236,11 @@ span.btn.btn-danger.btn-lg {
   width: 25%
 } */
 
+/*Pokemon Game styles*/
+.game {
+  margin-left: 15%;
+}
+
 .pokemonGame {
   background-image: url("https://external-preview.redd.it/e5zoQw-hgw-LCjdhC_4G8IAcHxex5pzda_BD_FPTcBY.png?auto=webp&s=c0b96b5ec20010a15864b8a0c9b202c119e52fe8");
   background-size: 75%;
@@ -399,7 +404,18 @@ button:hover {
   margin-left:1px
 }
 
-
 .regions {
-  width: 500px;
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.region-name {
+  text-align: center;
+}
+
+.region-info {
+  text-align: center;
+  font-weight: 800;
 }

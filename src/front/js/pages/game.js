@@ -50,6 +50,8 @@ export const Game = () => {
       <style>
         @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
       </style>
+      <h1 className="page-title"><strong>Pokemon Quiz</strong></h1>
+      <div className="game">
       <div className="container pokemonGame">
         {/*render the header*/}
         <header className="App-header Poke">
@@ -180,6 +182,7 @@ export const Game = () => {
             )}
           </div>
         )}
+      </div>
       </div>
     </>
   );
