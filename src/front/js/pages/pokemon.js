@@ -35,6 +35,7 @@ export const Pokemon = (props) => {
   const [render, rerender] = useState(false);
 
   useEffect(() => {
+    actions.rehydrate();
     setData(store.pokemon[params.id]);
 
     setType(
@@ -54,12 +55,12 @@ export const Pokemon = (props) => {
         return stats.trim(stats);
       })
     );
-      rerender(!render);
+    rerender(!render);
     console.log(stats);
-    for (let i = 0; i < stat_names.length; i++) {
+    for (let i = 0; i < stat_names?.length; i++) {
       console.log(stat_names[i]);
     }
-  });
+  }, [store.pokemon]);
 
   // useEffect(()=>{
   //   console.log(process.env.BACKEND_URL)

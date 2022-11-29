@@ -24,6 +24,16 @@ def get_pokemon_name(name):
         requests.get(f'https://pokeapi.co/api/v2/pokemon/{name}').json()
     ), 200
 
+@api.route("/pokemon/<int:id>/desc")
+def get_poke_desc(id):
+    resp = requests.get(f"https://pokeapi.co/api/v2/pokemon-species/{id}/").json()
+    description = list(filter(
+        lambda desc: desc["language"]["name"] == "en", 
+        resp["flavor_text_entries"]
+        ))
+    return jsonify(description.pop())
+
+
 # @api.route("/pokemon-species", methods=["GET"])
 # def get_pokemon_species():
 #     return jsonify(
