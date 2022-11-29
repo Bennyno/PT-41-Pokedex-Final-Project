@@ -32,6 +32,7 @@ export const Pokemon = (props) => {
   const [stat_names, setStat_names] = useState([]);
   const [stats, setStats] = useState([]);
   const [data, setData] = useState({});
+  const [desc, setDesc] = useState([]);
   const [render, rerender] = useState(false);
 
   useEffect(() => {
@@ -62,9 +63,11 @@ export const Pokemon = (props) => {
     }
   }, [store.pokemon]);
 
-    console.log(params.flavor_text);
+    console.log(params.text);
   return (
     <div className="jumbotron">
+      "hello"
+      {store.single_Pokemon.flavor_text}
       <div>
         <img className="soloimg" src={data.image} />
         <h1 className="display-4">{data.name}</h1>
