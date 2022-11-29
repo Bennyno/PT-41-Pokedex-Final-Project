@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Regions = () => {
 
@@ -70,6 +71,7 @@ export const Regions = () => {
         </div>
         <p className="region-info">Galar is the eighth region that appeared in Generation VIII's game Pokémon Sword and Shield. <br/>
         It is based off the United Kingdom. The region has cold seas around it, as East Sea Shellos and Gastrodon inhabit it.</p>
+       <h2 className="more-region-info">For more information about the different regions <a href = "https://pokemon.fandom.com/wiki/Regions">click here!</a></h2>
         </>
     )
 }

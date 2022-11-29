@@ -100,7 +100,10 @@ const getState = ({ getStore, getActions, setStore }) => {
   
         setFavorites: (favorite) => {
           const store = getStore();
-          setStore({ favorites: [...store.favorites, favorite] });
+          if (!store.favorites.toString().includes(favorite)) {
+          setStore({ favorites: [...store.favorites, favorite] })
+        }
+          else(console.log("Already added!"))
         },
   
         deleteFavorites: (favorite) => {
