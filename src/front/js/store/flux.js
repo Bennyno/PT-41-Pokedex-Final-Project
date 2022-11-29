@@ -66,68 +66,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           getActions().dehydrate();
         });
       },
-
-      // getPokemonSpecies: (data) => {
-      //   const store = getStore();
-      //   const endpoint = `${process.env.BACKEND_URL}/api/pokemon-species`;
-      //   const config = {
-      //     method: "GET",
-      //   };
-      //   fetch(endpoint, config)
-      //     .then((res) => res.json())
-      //     .then((data) => setStore({ pokemon_species: data.all_species }))
-      //     .catch((err) => err);
-      // },
-
-      // getPokemon: () => {+
-      //   const requests = [];
-      //   const pokeman = [];
-      //   let ok = 0;
-      //   let m_pkmn = 905;
-
-      //   for (let i = 1; i <= m_pkmn; i++) {
-      //     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-      //     requests.push(fetch(url));
-      //   }
-
-      //   Promise.all(requests).then((responses) => {
-      //     responses.forEach((response) => {
-      //       if (response.ok) {
-      //         ok++;
-      //       }
-      //       response
-      //         .json()
-      //         .then((data) => {
-      //           const api_pkmn = {
-      //             name: data.name,
-      //             id: data.id,
-      //             image: data.sprites["front_default"],
-      //             type: data.types.map((type) => type.type.name).join(", "),
-      //           };
-
-      //           pokeman.push(api_pkmn);
-      //         })
-      //         .then(() => {
-      //           console.log(pokeman.length);
-      //           if (pokeman.length) {
-      //             setStore({
-      //               pokemon: pokeman,
-      //             });
-      //           }
-      //         });
-      //     });
-      //   }).then(() => console.log("Final", pokeman.length));
-      // },
-
-      // getPokemon: () => {
-      // 	return fetch("https://pokeapi.co/api/v2/pokemon?limit=905")
-      // 	.then(response => response.json())
-      // 	.then(json => setStore({
-      // 		pokemon:json.results
-      // 	}))
-      // 	.catch(error => console.log('error', error));
-      // },
-
+      
       setFavorites: (favorite) => {
         const store = getStore();
         setStore({ favorites: [...store.favorites, favorite] });

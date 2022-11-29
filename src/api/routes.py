@@ -33,13 +33,6 @@ def get_poke_desc(id):
         ))
     return jsonify(description.pop())
 
-
-# @api.route("/pokemon-species", methods=["GET"])
-# def get_pokemon_species():
-#     return jsonify(
-#         requests.get(f'https://pokeapi.co/api/v2/pokemon-species').json()
-#     ), 200
-
 @api.route("/protected", methods=["GET"])
 @jwt_required()
 def protected():
@@ -80,12 +73,3 @@ def login():
      
     access_token = create_access_token(identity=data["email"])
     return jsonify(access_token=access_token),200
-
-# @api.route('/hello', methods=['POST', 'GET'])
-# def handle_hello():
-
-#     response_body = {
-#         "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-#     }
-
-#     return jsonify(response_body), 200

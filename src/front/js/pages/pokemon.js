@@ -62,10 +62,7 @@ export const Pokemon = (props) => {
     }
   }, [store.pokemon]);
 
-  // useEffect(()=>{
-  //   console.log(process.env.BACKEND_URL)
-  // },[])
-
+    console.log(params.flavor_text);
   return (
     <div className="jumbotron">
       <div>
