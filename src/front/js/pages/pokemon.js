@@ -28,80 +28,96 @@ const TYPE_COLORS = {
 export const Pokemon = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
+  const [p_type, setType] = useState([]);
+  const [stat_names, setStat_names] = useState([]);
+  const [stats, setStats] = useState([]);
+  const [data, setData] = useState({});
+  const [desc, setDesc] = useState({});
+  const [render, rerender] = useState(false);
 
-  // useEffect(()=>{
-  //   console.log(process.env.BACKEND_URL)
-  // },[]) 
+  useEffect(() => {
+    actions.rehydrate();
+  }, []);
 
-  const data = store.pokemon[params.id];
+  useEffect(() => {
+    actions.getPokemonDesc(data)?.then((result) => setDesc(result));
+    setData(store.pokemon[params.id]);
 
-  const trimmedData = data.type.split(",").map(types => {
-    return types.trim()
-  })
+    setType(
+      data?.type?.split(",").map((types) => {
+        return types.trim();
+      })
+    );
 
-  const trimmedNames = data.stat_names.split(",").map(names => {
-    return names.trim()
-  })
+    setStat_names(
+      data?.stat_names?.split(",").map((names) => {
+        return names.trim();
+      })
+    );
 
-  const trimmedStats = data.stats.split(",").map(stats => {
-    return stats.trim(trimmedStats)
-  })
-  console.log(trimmedStats);
-  for (let i = 0; i < trimmedNames.length; i++){  
-    console.log(trimmedNames[i]);}
+    setStats(
+      data?.stats?.split(",").map((stats) => {
+        return stats.trim(stats);
+      })
+    );
+    rerender(!render);
+    console.log(stats);
+    console.table(stat_names);
+  }, [store.pokemon]);
 
-
+  console.log(params.text);
   return (
     <div className="jumbotron">
+      {store.single_Pokemon.flavor_text}
       <div>
-        <img className="soloimg" src={data.image} />
-        <h1 className="display-4">{data.name}</h1>
+        <img className="soloimg" src={data?.image} />
+        <h1 className="display-4">{data?.name}</h1>
         <div className="grid">
-        <p className="single typingPoke">
-        {trimmedData.map((type) => (
-          <span
-            key={type}
-            className="badge badge-pill mr-1"
-            style={{
-              backgroundColor: `#${TYPE_COLORS[type]}`,
-              color: "white",
-            }}
-          >
-            {type
-              .toLowerCase()
-              .split(" ")
-              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-              .join(" ")}
-          </span>
-        ))}
-        </p>
-        
-        <p className="single"><strong>Number:</strong> {data.id}</p>
-        <p className="single"><strong>Abilities:</strong> {data.abilities}</p>
-        <p className="single"><strong>Height:</strong> {data.height}</p>
-		    <p className="single-last"><strong>Weight:</strong> {data.weight}</p>
+          <p className="single typingPoke">
+            {p_type?.map((type) => (
+              <span
+                key={type}
+                className="badge badge-pill mr-1"
+                style={{
+                  backgroundColor: `#${TYPE_COLORS[type]}`,
+                  color: "white",
+                }}
+              >
+                {type
+                  .toLowerCase()
+                  .split(" ")
+                  .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+                  .join(" ")}
+              </span>
+            ))}
+          </p>
+
+          <p className="single">
+            <strong>Number:</strong> {data?.id}
+          </p>
+          <p className="single">
+            <strong>Abilities:</strong> {data?.abilities}
+          </p>
+          <p className="single">
+            <strong>Height:</strong> {data?.height}
+          </p>
+          <p className="single-last">
+            <strong>Weight:</strong> {data?.weight}
+          </p>
         </div>
-       
-      <div className= "statsGraph">
-      <h4>Base Stats</h4>
-            <strong>{trimmedNames[0].toUpperCase()}</strong>
-            <ProgressBar now={trimmedStats[0]} max={255} label={trimmedStats[0]} />
-            <strong>{trimmedNames[1].toUpperCase().toUpperCase()}</strong>
-            <ProgressBar now={trimmedStats[1]} max={255} label={trimmedStats[1]} />
-            <strong>{trimmedNames[2].toUpperCase()}</strong>
-            <ProgressBar now={trimmedStats[2]} max={255} label={trimmedStats[2]} />
-            <strong>{trimmedNames[3].toUpperCase()}</strong>
-            <ProgressBar now={trimmedStats[3]} max={255} label={trimmedStats[3]} />
-            <strong>{trimmedNames[4].toUpperCase()}</strong>
-            <ProgressBar now={trimmedStats[4]} max={255} label={trimmedStats[4]} />
-            <strong>{trimmedNames[5].toUpperCase()}</strong>
-            <ProgressBar now={trimmedStats[5]} max={255} label={trimmedStats[5]} />
-      </div>
-            <p className="detail">
-          This is {data.name}. <br></br>
-		  It is a {data.type} type pokemon and it's pokedex number is {data.id}. <br></br>
-		  It has the abilities {data.abilities} and it's {data.stat_names} stats are {data.stats} respectively. 
-        </p>
+
+        <div className="statsGraph">
+          <h4>Base Stats</h4>
+          {stat_names?.map((name, idx) => {
+            return (
+              <>
+                <strong>{name?.toUpperCase()}</strong>
+                <ProgressBar now={stats[idx]} max={255} label={stats[idx]} />
+              </>
+            );
+          })}
+        </div>
+        <p className="detail">{desc?.flavor_text}</p>
       </div>
       <hr className="my-4" />
       <Link to="/">
@@ -116,4 +132,3 @@ export const Pokemon = (props) => {
 Pokemon.propTypes = {
   match: PropTypes.object,
 };
-

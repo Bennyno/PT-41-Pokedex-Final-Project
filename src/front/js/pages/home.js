@@ -17,25 +17,6 @@ export const Home = () => {
     rerender(!render);
   }
 
-    //   return(
-    // 	<>
-    // 	<h1 className="pokedex"><strong>Pokedex</strong></h1>
-    //   <div className="card">
-    //   {store.pokemon?.map((pokemon, index) => {
-    //   const paddedId = ("00" + (index + 1)).slice(-3);
-    //   const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
-    // 	  return (
-    // 		<PokemonCard key={index}
-    // 		  name={pokemon.name}
-    // 		  number={pokemon.index}
-    // 		  image={image}
-    // 		  index = {index} />
-    // 	  );
-    // 	})}
-    //   </div>
-    //   </>
-    // )
-
   return (
     <>
       <h1 onClick={actions.getPokemon} className="page-title">
@@ -56,6 +37,7 @@ export const Home = () => {
               image={pokemon.image}
               name={pokemon.name}
               type={pokemon.type}
+              flavor_text={pokemon.flavor_text}
               index={index}
             />
           );

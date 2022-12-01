@@ -174,6 +174,11 @@ p.card-text {
 }
 
 /*Styles For Individual Pokemon Pages*/
+div.jumbotron {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/01c1cad6-a54c-430a-a91c-d330b68403df/da5ucbm-78018326-2f14-452d-a8f3-4bc7fc0acb37.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAxYzFjYWQ2LWE1NGMtNDMwYS1hOTFjLWQzMzBiNjg0MDNkZlwvZGE1dWNibS03ODAxODMyNi0yZjE0LTQ1MmQtYThmMy00YmM3ZmMwYWNiMzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gZQb5m-qKUQYPDJEkDa9HG2Yeh-xnuYMsTCArk7J6X4");
+  background-size: 100%;
+}
+
 .soloimg {
   display: block;
   margin-top: 110px;
@@ -236,17 +241,10 @@ span.btn.btn-danger.btn-lg {
   margin-left: auto;
   width: 25%;
 }
-
-/* .statsGraph{
-  margin: 15px;
-  width: 25%
-} */
-
 /*Pokemon Game styles*/
 .game {
   margin-left: 15%;
 }
-
 .pokemonGame {
   background-image: url("https://external-preview.redd.it/e5zoQw-hgw-LCjdhC_4G8IAcHxex5pzda_BD_FPTcBY.png?auto=webp&s=c0b96b5ec20010a15864b8a0c9b202c119e52fe8");
   background-size: 75%;
