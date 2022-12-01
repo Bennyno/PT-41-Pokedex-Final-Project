@@ -1,7 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      single_Pokemon: [],
       pokemon_species: [],
       pokemon: [],
       favorites: [],
@@ -76,11 +75,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           getActions().dehydrate();
         });
       },
-      
-      setFavorites: (favorite) => {
-        const store = getStore();
-        setStore({ favorites: [...store.favorites, favorite] });
-      },
         setFavorites: (favorite) => {
           const store = getStore();
           if (!store.favorites.toString().includes(favorite)) {
@@ -124,14 +118,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           } catch (error) {
             console.error("There is an error when logging in.");
           }
-          const data = await resp.json();
-          console.log("This came from the backend", data);
-          sessionStorage.setItem("token", data.access_token);
-          setStore({ token: data.access_token });
-          return true;
-        } catch (error) {
-          console.error("There is an error when logging in.");
-        }
       },
       verifyUser: (token) => {
         fetch(`${process.env.BACKEND_URL}/api/protected`, {

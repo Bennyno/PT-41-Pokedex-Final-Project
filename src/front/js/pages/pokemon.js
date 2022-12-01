@@ -68,7 +68,6 @@ export const Pokemon = (props) => {
   console.log(params.text);
   return (
     <div className="jumbotron">
-      {store.single_Pokemon.flavor_text}
       <div>
         <img className="soloimg" src={data?.image} />
         <h1 className="display-4">{data?.name}</h1>
