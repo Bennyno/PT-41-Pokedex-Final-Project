@@ -118,7 +118,6 @@ export const Pokemon = (props) => {
         </div>
         <p className="detail">{desc?.flavor_text}</p>
       </div>
-      <hr className="my-4" />
       <Link to="/">
         <span className="btn btn-danger btn-lg" role="button">
           Back home

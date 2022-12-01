@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-
+import pokeApp from "../../img/PokeAPP-1 (2).jpg";
 import { DropDownMenu } from "./dropdown";
 
 export const Navbar = () => {
@@ -13,7 +13,7 @@ export const Navbar = () => {
         <Link to="/">
           <img
             className="pokemon-logo"
-            src="https://bignintendonews.files.wordpress.com/2016/09/pokemon-logo_-e1444920307199.jpg"
+            src={pokeApp}
           />
         </Link>
       </div>
