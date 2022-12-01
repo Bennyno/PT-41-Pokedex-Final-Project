@@ -81,7 +81,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
         setStore({ favorites: [...store.favorites, favorite] });
       },
-
+        setFavorites: (favorite) => {
+          const store = getStore();
+          if (!store.favorites.toString().includes(favorite)) {
+          setStore({ favorites: [...store.favorites, favorite] })
+        }
+          else(console.log("Already added!"))
+        },
+  
       deleteFavorites: (favorite) => {
         const store = getStore();
         const del = store.favorites.filter((item) => item != favorite);
@@ -108,6 +115,14 @@ const getState = ({ getStore, getActions, setStore }) => {
           if (resp.status !== 200) {
             alert("There was an error with the email or password.");
             return false;
+            }
+            const data = await resp.json();
+            console.log("This came from the backend", data);
+            sessionStorage.setItem("token", data.access_token);
+            setStore({ token: data.access_token });
+            return true;
+          } catch (error) {
+            console.error("There is an error when logging in.");
           }
           const data = await resp.json();
           console.log("This came from the backend", data);

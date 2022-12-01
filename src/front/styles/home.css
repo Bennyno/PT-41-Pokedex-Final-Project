@@ -8,6 +8,10 @@
 
 nav.navbar {
   background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 /*Navbar Element Styles*/
@@ -59,7 +63,11 @@ a.dropdown-item {
 }
 
 .nav-pokeballs {
- display: flex;
+  display: flex;
+}
+
+.navbar-opts {
+  font-weight: 500;
 }
 
 /*Favorite Pokeball Styles*/
@@ -92,7 +100,7 @@ a.dropdown-item {
 
 .page-title {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 150px;
   margin-bottom: 20px;
   font-size: 60px;
   color: red;
@@ -173,7 +181,7 @@ div.jumbotron {
 
 .soloimg {
   display: block;
-  margin-top: 5px;
+  margin-top: 110px;
   margin-left: auto;
   margin-right: auto;
   width: 20%;
@@ -190,8 +198,6 @@ div.jumbotron {
   text-transform: capitalize;
 }
 
-
-
 .single-last {
   text-align: center;
   text-transform: capitalize;
@@ -206,14 +212,14 @@ div.jumbotron {
 }
 
 div.grid {
- /* float: right; 
+  /* float: right; 
  margin-right: 500px; */
- display: block;
- margin-left: auto;
- margin-right: auto;
- border-radius: 10px;
- background-color: #30A7D7;
- width: 300px; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  background-color: #30a7d7;
+  width: 300px;
 }
 
 span.badge.badge-pill.mr-1 {
@@ -233,9 +239,12 @@ span.btn.btn-danger.btn-lg {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  width: 25%
+  width: 25%;
 }
-
+/*Pokemon Game styles*/
+.game {
+  margin-left: 15%;
+}
 .pokemonGame {
   background-image: url("https://external-preview.redd.it/e5zoQw-hgw-LCjdhC_4G8IAcHxex5pzda_BD_FPTcBY.png?auto=webp&s=c0b96b5ec20010a15864b8a0c9b202c119e52fe8");
   background-size: 75%;
@@ -357,6 +366,19 @@ button:hover {
   overflow: visible;
 }
 
+/*styles for login page*/
+
+.full-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-home {
+  background-image: url("https://vignette.wikia.nocookie.net/fantendo/images/5/51/Pok%C3%A9mon_Stadium_2.jpg/revision/latest?cb=20141221100214");
+  background-size: cover;
+}
+
 .form {
   display: flex;
   justify-content: center;
@@ -367,6 +389,7 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: white;
 }
 
 .box {
@@ -378,28 +401,45 @@ button:hover {
   background-color: white;
 }
 
-.newsign{
+.newsign {
   background-color: rgb(0, 140, 255);
-  margin: 15px
+  margin: 15px;
 }
-.signupbutton{
+.signupbutton {
   background-color: rgb(0, 140, 255);
-  margin: 15px
+  margin: 15px;
 }
 
-.password{
-  margin: 5px
+.password {
+  margin: 5px;
 }
 
-.text-center{
+.text-center {
   margin: 10px;
 }
 
-.typing{
-  margin-left:1px
+.typing {
+  margin-left: 1px;
 }
 
+/*styles for regions page*/
 
 .regions {
-  width: 500px;
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.region-name {
+  text-align: center;
+}
+
+.region-info {
+  text-align: center;
+  font-weight: 800;
+}
+
+.more-region-info {
+  text-align: center;
 }
