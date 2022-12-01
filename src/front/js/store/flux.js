@@ -28,30 +28,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      getSinglePokemon: () => {
-        const promises = [];
-        const single_pokemon = [];
-        const text_pokemon = getStore().single_Pokemon
-        for (
-          let i = text_pokemon.length + 1;
-          i <= Math.min(905, text_pokemon.length + 20);
-          i++
-        ){
-          const url = `${process.env.BACKEND_URL}/api/pokemon/${i}/desc`;
-          promises.push(fetch(url).then((res) => res.json()));
-          console.log("Fetch request created", i);
+      getPokemonDesc: ({id}) => {
+        if(!id){
+          return
         }
-        Promise.all(promises).then((results) => {
-          results.forEach((result) =>
-          single_pokemon.push({
-          text: result.flavor_text
-            })
-          );
-          
-          setStore({ single_Pokemon: single_pokemon });
-          console.log(getStore().single_Pokemon,"hello")
-          getActions().dehydrate();
-        });
+        return fetch(`${process.env.BACKEND_URL}/api/pokemon/${id}/desc`)
+          .then(resp=>resp.json())
+          .then(data=>data)
       },
 
       getPokemon: () => {
