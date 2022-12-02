@@ -142,7 +142,7 @@ a.dropdown-item {
   border: none;
   background: white;
   width: 30px;
-  margin-left: 310px;
+  margin-left: 322px;
 }
 
 .pokeball-button:hover {
@@ -155,7 +155,7 @@ a.dropdown-item {
 }
 
 .btn.btn-danger {
-  margin-left: 5px;
+  margin-left: 1px;
 }
 
 /*Overall Card Display*/
