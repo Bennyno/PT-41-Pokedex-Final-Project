@@ -232,8 +232,7 @@ span.badge.badge-pill.mr-1 {
 }
 
 /*Back Home button from learn more page*/
-span.btn.btn-danger.btn-lg {
-  /* background-color: #0D6EFD; */
+a.btn.btn-danger.btn-lg {
   display: block;
   width: 200px;
   margin-left: auto;

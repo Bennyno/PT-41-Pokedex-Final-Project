@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import  Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button"
 
-export const DropDownMenu = () => {
+export const DropDownMenu = (props) => {
   const {store, actions} = useContext(Context);
   const [favorites, setFavorites] = useState({});
   const [selectedFavorites, setselectedFavorites] = useState({favorites:[]});

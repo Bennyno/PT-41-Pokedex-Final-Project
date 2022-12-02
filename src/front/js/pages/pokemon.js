@@ -61,11 +61,8 @@ export const Pokemon = (props) => {
       })
     );
     rerender(!render);
-    console.log(stats);
-    console.table(stat_names);
   }, [store.pokemon]);
 
-  console.log(params.text);
   return (
     <div className="jumbotron">
       <div>
@@ -118,10 +115,8 @@ export const Pokemon = (props) => {
         </div>
         <p className="detail">{desc?.flavor_text}</p>
       </div>
-      <Link to="/">
-        <span className="btn btn-danger btn-lg" role="button">
+      <Link to="/" className="btn btn-danger btn-lg">
           Back home
-        </span>
       </Link>
     </div>
   );
