@@ -432,7 +432,7 @@ button:hover {
 
 /*styles for regions page*/
 .container {
-  border: black dashed 1px;
+  border: dashed 1px white;
   background-color: white;
 }
 
@@ -440,9 +440,6 @@ button:hover {
   background-image: url("https://images4.alphacoders.com/232/232838.jpg");
   background-size: contain;
   background-position: top;
-  /* background-repeat: no-repeat;
-  height:100%;
-  width: 100%; */
 }
 
 .regions {
