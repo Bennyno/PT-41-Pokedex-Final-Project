@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import pokeApp from "../../img/PokeAPP-1 (2).jpg";
+import pokeApp from "../../img/logo.jpg";
 import { DropDownMenu } from "./dropdown";
 
 export const Navbar = () => {

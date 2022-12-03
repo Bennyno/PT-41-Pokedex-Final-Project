@@ -15,7 +15,7 @@ useEffect(()=> console.table(favorites), [favorites])
   const deleteFavoriteBtn = store.favorites.map((item, index) => {
     return (
       <Dropdown.Item key ={index} value={index}>
-        <Link to={`/pokemon/${item?.id}`}>
+        <Link to={`/pokemon/${item.id}`}>
           {item.name}
         </Link>
       <Button

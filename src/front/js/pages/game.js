@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/home.css";
 
+
 export const Game = () => {
   //hooks
   const [started, updateStarted] = useState(false);
@@ -50,139 +51,141 @@ export const Game = () => {
       <style>
         @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
       </style>
-      <h1 className="page-title"><strong>Pokemon Quiz</strong></h1>
+      <h1 className="page-title">
+        <strong>Pokemon Quiz</strong>
+      </h1>
       <div className="game">
-      <div className="container pokemonGame">
-        {/*render the header*/}
-        <header className="App-header Poke">
-          <h1>Who's That Pokemon!</h1>
-        </header>
-        {answer === null && pokemon.length === 4 && (
-          <div className="App-body">
-            <div className="Body-contents">
-              <div className="Img">
-                <img
-                  className="Hidden-img"
-                  src={pokemon[correct].sprites.front_default}
-                  alt="xd"
-                />
-              </div>
-              <div className="Options">
-                <div className="ButtonsGuesses">
-                  <button className="Guess" onClick={() => answerUpdate(0)}>
-                    {pokemon[0].name.charAt(0).toUpperCase() +
-                      pokemon[0].name.slice(1)}
-                  </button>
-                </div>
-                <div className="ButtonsGuesses">
-                  <button className="Guess" onClick={() => answerUpdate(1)}>
-                    {pokemon[1].name.charAt(0).toUpperCase() +
-                      pokemon[1].name.slice(1)}
-                  </button>
-                </div>
-                <div className="ButtonsGuesses">
-                  <button className="Guess" onClick={() => answerUpdate(2)}>
-                    {pokemon[2].name.charAt(0).toUpperCase() +
-                      pokemon[2].name.slice(1)}
-                  </button>
-                </div>
-                <div className="ButtonsGuesses">
-                  <button className="Guess" onClick={() => answerUpdate(3)}>
-                    {pokemon[3].name.charAt(0).toUpperCase() +
-                      pokemon[3].name.slice(1)}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/*loading pokemon*/}
-        {load && (
-          <div className="App-body">
-            <div className="Body-contents">
-              <div className="load Poke">
-                <h3>Loading Pokemon</h3>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/*get user to request a new quiz*/}
-        {!load && (!started || answer !== null) && (
-          <div className="App-body">
-            {/* They guessed correctly */}
-            {answer === correct && answer !== null && (
-              <div className="Answer-div">
-                <img
-                  className="Shown-img Poke"
-                  src={pokemon[correct].sprites.front_default}
-                  alt="xd"
-                />
-                <div className="Answer-text">
-                  <p>
-                    It's{" "}
-                    {pokemon[correct].name.charAt(0).toUpperCase() +
-                      pokemon[correct].name.slice(1)}
-                    {""}!
-                  </p>
-                  <p>You are correct!</p>
-                  <div className="Button-div">
-                    <button
-                      className="newQuizButton"
-                      onClick={() => getPokemon()}
-                    >
-                      Play Again
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* They guessed incorrectly */}
-            {answer !== correct && answer !== null && (
-              <div className="Answer-div Poke">
-                <img
-                  className="Shown-img"
-                  src={pokemon[correct].sprites.front_default}
-                  alt="xd"
-                />
-                <div className="Answer-text">
-                  <p>
-                    It's{" "}
-                    {pokemon[correct].name.charAt(0).toUpperCase() +
-                      pokemon[correct].name.slice(1)}
-                    {""}!
-                  </p>
-                  <p>
-                    You guessed it was{" "}
-                    {pokemon[answer].name.charAt(0).toUpperCase() +
-                      pokemon[answer].name.slice(1)}
-                    {""}. Try again!
-                  </p>
-                  <div className="Button-div">
-                    <button
-                      className="newQuizButton"
-                      onClick={() => getPokemon()}
-                    >
-                      Play Again
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* if the quiz has been answered, give the option to reset */}
-            {!started && (
+        <div className="container pokemonGame">
+          {/*render the header*/}
+          <header className="App-header Poke">
+            <h1>Who's That Pokemon!</h1>
+          </header>
+          {answer === null && pokemon.length === 4 && (
+            <div className="App-body">
               <div className="Body-contents">
-                <button className="startButton" onClick={() => getPokemon()}>
-                  Start Quiz
-                </button>
+                <div className="Img">
+                  <img
+                    className="Hidden-img"
+                    src={pokemon[correct].sprites.front_default}
+                    alt="xd"
+                  />
+                </div>
+                <div className="Options">
+                  <div className="ButtonsGuesses">
+                    <button className="Guess" onClick={() => answerUpdate(0)}>
+                      {pokemon[0].name.charAt(0).toUpperCase() +
+                        pokemon[0].name.slice(1)}
+                    </button>
+                  </div>
+                  <div className="ButtonsGuesses">
+                    <button className="Guess" onClick={() => answerUpdate(1)}>
+                      {pokemon[1].name.charAt(0).toUpperCase() +
+                        pokemon[1].name.slice(1)}
+                    </button>
+                  </div>
+                  <div className="ButtonsGuesses">
+                    <button className="Guess" onClick={() => answerUpdate(2)}>
+                      {pokemon[2].name.charAt(0).toUpperCase() +
+                        pokemon[2].name.slice(1)}
+                    </button>
+                  </div>
+                  <div className="ButtonsGuesses">
+                    <button className="Guess" onClick={() => answerUpdate(3)}>
+                      {pokemon[3].name.charAt(0).toUpperCase() +
+                        pokemon[3].name.slice(1)}
+                    </button>
+                  </div>
+                </div>
               </div>
-            )}
-          </div>
-        )}
-      </div>
+            </div>
+          )}
+
+          {/*loading pokemon*/}
+          {load && (
+            <div className="App-body">
+              <div className="Body-contents">
+                <div className="load Poke">
+                  <h3>Loading Pokemon</h3>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/*get user to request a new quiz*/}
+          {!load && (!started || answer !== null) && (
+            <div className="App-body">
+              {/* They guessed correctly */}
+              {answer === correct && answer !== null && (
+                <div className="Answer-div">
+                  <img
+                    className="Shown-img Poke"
+                    src={pokemon[correct].sprites.front_default}
+                    alt="xd"
+                  />
+                  <div className="Answer-text">
+                    <p>
+                      It's{" "}
+                      {pokemon[correct].name.charAt(0).toUpperCase() +
+                        pokemon[correct].name.slice(1)}
+                      {""}!
+                    </p>
+                    <p>You are correct!</p>
+                    <div className="Button-div">
+                      <button
+                        className="newQuizButton"
+                        onClick={() => getPokemon()}
+                      >
+                        Play Again
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* They guessed incorrectly */}
+              {answer !== correct && answer !== null && (
+                <div className="Answer-div Poke">
+                  <img
+                    className="Shown-img"
+                    src={pokemon[correct].sprites.front_default}
+                    alt="xd"
+                  />
+                  <div className="Answer-text">
+                    <p>
+                      It's{" "}
+                      {pokemon[correct].name.charAt(0).toUpperCase() +
+                        pokemon[correct].name.slice(1)}
+                      {""}!
+                    </p>
+                    <p>
+                      You guessed it was{" "}
+                      {pokemon[answer].name.charAt(0).toUpperCase() +
+                        pokemon[answer].name.slice(1)}
+                      {""}. Try again!
+                    </p>
+                    <div className="Button-div">
+                      <button
+                        className="newQuizButton"
+                        onClick={() => getPokemon()}
+                      >
+                        Play Again
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* if the quiz has been answered, give the option to reset */}
+              {!started && (
+                <div className="Body-contents">
+                  <button className="startButton" onClick={() => getPokemon()}>
+                    Start Quiz
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
