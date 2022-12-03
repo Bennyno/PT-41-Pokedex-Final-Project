@@ -65,7 +65,7 @@ export const Pokemon = (props) => {
 
   return (
     <div className="jumbotron">
-      <div>
+      
         <img className="soloimg" src={data?.image} />
         <h1 className="display-4">{data?.name}</h1>
         <div className="grid">
@@ -113,8 +113,8 @@ export const Pokemon = (props) => {
             );
           })}
         </div>
-        <p className="detail">{desc?.flavor_text}</p>
-      </div>
+        <p className="detail"><strong>{desc?.flavor_text}</strong></p>
+      
       <Link to="/" className="btn btn-danger btn-lg">
           Back home
       </Link>

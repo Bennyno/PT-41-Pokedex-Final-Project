@@ -64,7 +64,7 @@ export const PokemonCard = (props) => {
         </Link>
         <button
           className="pokeball-button"
-          onClick={() => actions.setFavorites(props.name)}
+          onClick={() => actions.setFavorites({name:props.name, id:props.index})}
         >
           <img
             className="pokeball"

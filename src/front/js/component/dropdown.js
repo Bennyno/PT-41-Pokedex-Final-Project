@@ -3,16 +3,21 @@ import { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import  Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button"
+import { Link } from "react-router-dom";
 
-export const DropDownMenu = (props) => {
+export const DropDownMenu = () => {
   const {store, actions} = useContext(Context);
   const [favorites, setFavorites] = useState({});
   const [selectedFavorites, setselectedFavorites] = useState({favorites:[]});
 
+useEffect(()=> console.table(favorites), [favorites])
+
   const deleteFavoriteBtn = store.favorites.map((item, index) => {
     return (
       <Dropdown.Item key ={index} value={index}>
-      {item}
+        <Link to={`/pokemon/${item?.id}`}>
+          {item.name}
+        </Link>
       <Button
         onClick={()=> actions.deleteFavorites(item)}
         className = "delete">

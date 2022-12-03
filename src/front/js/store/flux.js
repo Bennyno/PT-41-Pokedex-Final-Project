@@ -27,13 +27,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      getPokemonDesc: ({id}) => {
-        if(!id){
-          return
+      getPokemonDesc: ({ id }) => {
+        if (!id) {
+          return;
         }
         return fetch(`${process.env.BACKEND_URL}/api/pokemon/${id}/desc`)
-          .then(resp=>resp.json())
-          .then(data=>data)
+          .then((resp) => resp.json())
+          .then((data) => data);
       },
 
       getPokemon: () => {
@@ -68,21 +68,22 @@ const getState = ({ getStore, getActions, setStore }) => {
                 .map((stats) => stats.stat.name)
                 .join(", "),
               stats: result.stats.map((stats) => stats.base_stat).join(", "),
-              // flavor_text: `https://pokeapi.co/api/v2/pokemon-species/${result.id}`
             })
           );
           setStore({ pokemon: old_pokemon });
           getActions().dehydrate();
         });
       },
-        setFavorites: (favorite) => {
-          const store = getStore();
-          if (!store.favorites.toString().includes(favorite)) {
-          setStore({ favorites: [...store.favorites, favorite] })
+      setFavorites: (favorite) => {
+        const store = getStore();
+        if (!store.favorites.map((item) => item.name).includes(favorite.name)) {
+          setStore({ favorites: [...store.favorites, favorite] });
+        } else {
+          console.log("Already added!");
         }
-          else(console.log("Already added!"))
-        },
-  
+        getActions().dehydrate();
+      },
+
       deleteFavorites: (favorite) => {
         const store = getStore();
         const del = store.favorites.filter((item) => item != favorite);
@@ -109,15 +110,15 @@ const getState = ({ getStore, getActions, setStore }) => {
           if (resp.status !== 200) {
             alert("There was an error with the email or password.");
             return false;
-            }
-            const data = await resp.json();
-            console.log("This came from the backend", data);
-            sessionStorage.setItem("token", data.access_token);
-            setStore({ token: data.access_token });
-            return true;
-          } catch (error) {
-            console.error("There is an error when logging in.");
           }
+          const data = await resp.json();
+          console.log("This came from the backend", data);
+          sessionStorage.setItem("token", data.access_token);
+          setStore({ token: data.access_token });
+          return true;
+        } catch (error) {
+          console.error("There is an error when logging in.");
+        }
       },
       verifyUser: (token) => {
         fetch(`${process.env.BACKEND_URL}/api/protected`, {
