@@ -472,7 +472,7 @@ button:hover {
 .bg-badges {
   background-image: url("https://wallpapercave.com/wp/YO5FMUT.jpg");
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   background-repeat: no-repeat;
 }
 
@@ -482,10 +482,6 @@ table {
 
 table, th, td {
   border:1px solid black;
-}
-.all-badges {
-  display: flex;
-  justify-content: center;
 }
 
 .badges {
@@ -503,5 +499,5 @@ table, th, td {
 .container.gym-badges {
   border: 1px dashed white;
   background-color: white;
-  height: 100vh;
+  height: 100%;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 
 export const Badges = () => {
+   
     return(
         <div className="full-screen bg-badges">
         <div className="container gym-badges">
@@ -11,21 +12,21 @@ export const Badges = () => {
             </tr>
             <tr bgcolor="lightgray">
                 <tr>
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/d/dd/Boulder_Badge.png"></img></td>
+                <td><img className ="badges" src="https://cdn2.bulbagarden.net/upload/d/dd/Boulder_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/9/9c/Cascade_Badge.png"></img></td>
+                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/thumb/9/9c/Cascade_Badge.png/900px-Cascade_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/a/a6/Thunder_Badge.png"></img></td>
+                <td><img className ="badges" src="https://www.pikpng.com/pngl/b/340-3405650_pokemon-badge-png.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/b/b5/Rainbow_Badge.png"></img></td>
+                <td><img className ="badges" src="https://i1.wp.com/press.invincible.ink/wp-content/uploads/2019/01/badges_06_rainbow-300x300.png?ssl=1"></img></td>
                 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/7/7d/Soul_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/6/6b/Marsh_Badge.png"></img></td>
+                <td><img className ="badges" src="https://cdn2.bulbagarden.net/upload/thumb/6/6b/Marsh_Badge.png/600px-Marsh_Badge.png"></img></td>
             
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/1/12/Volcano_Badge.png"></img></td>
+                <td><img className ="badges" src="https://webstockreview.net/images/pokemon-clipart-badges-3.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/7/78/Earth_Badge.png"></img></td>
+                <td><img className ="badges" src="https://vignette.wikia.nocookie.net/pokemonlp-utomaikeru/images/7/78/Earth_Badge.png/revision/latest?cb=20160316043150"></img></td>
                 </tr>
             </tr>
         </table>
@@ -36,7 +37,7 @@ export const Badges = () => {
             </tr>
             <tr bgcolor="lightgray">
                 <tr>
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/4/4a/Zephyr_Badge.png"></img></td>
+                <td><img className ="badges" src="https://stegriff.co.uk/assets/old-content/badges/files/GSC/1zephyr.png"></img></td>
                 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/0/08/Hive_Badge.png"></img></td>
                 
@@ -63,19 +64,19 @@ export const Badges = () => {
                 <tr>
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/6/63/Stone_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/9/97/Knuckle_Badge.png"></img></td>
+                <td><img className ="badges" src="http://img3.wikia.nocookie.net/__cb20140715005831/pokemon/images/b/b4/Knuckle_badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/3/34/Dynamo_Badge.png"></img></td>
+                <td><img className ="badges" src="http://img3.wikia.nocookie.net/__cb20140715010553/pokemon/images/b/b4/Dynamo_badge.png"></img></td>
                 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/c/c4/Heat_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/6/63/Balance_Badge.png"></img></td>
+                <td><img className ="badges" src="http://img3.wikia.nocookie.net/__cb20140715173933/pokemon/images/a/af/Balance_badge.png"></img></td>
                 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/6/62/Feather_Badge.png"></img></td>
 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/c/cc/Mind_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/9/9b/Rain_Badge.png"></img></td>
+                <td><img className ="badges" src="https://2img.net/h/archives.bulbagarden.net/media/upload/9/9b/Rain_Badge.png"></img></td>
                 </tr>
             </tr>
         </table>
@@ -96,7 +97,7 @@ export const Badges = () => {
                 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/2/28/Relic_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/f/fe/Mine_Badge.png"></img></td>
+                <td><img className ="badges" src="https://cdn.staticneo.com/w/pokemon/thumb/0/00/MineBadge.png/120px-MineBadge.png"></img></td>
 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/0/09/Icicle_Badge.png"></img></td>
                 
@@ -138,19 +139,19 @@ export const Badges = () => {
                 <tr>
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/a/a5/Bug_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/3/39/Cliff_Badge.png"></img></td>
+                <td><img className ="badges" src="http://img2.wikia.nocookie.net/__cb20131029043723/pokemon/images/3/39/Cliff_Badge.png"></img></td>
                 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/d/d4/Rumble_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/7/7d/Plant_Badge.png"></img></td>
+                <td><img className ="badges" src="https://cdn2.bulbagarden.net/upload/thumb/7/7d/Plant_Badge.png/100px-Plant_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/f/fc/Voltage_Badge.png"></img></td>
+                <td><img className ="badges" src="https://cdn2.bulbagarden.net/upload/thumb/f/fc/Voltage_Badge.png/100px-Voltage_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/d/d1/Fairy_Badge.png"></img></td>
+                <td><img className ="badges" src="http://vignette2.wikia.nocookie.net/pokemon/images/d/d1/Fairy_Badge.png"></img></td>
 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/1/13/Psychic_Badge.png"></img></td>
+                <td><img className ="badges" src="https://onehallyu.com/uploads/trophies/Psychic_Badge_125.png.912fea7d7768578aad9a29c325401b85.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/8/84/Iceberg_Badge.png"></img></td>
+                <td><img className ="badges" src="http://img4.wikia.nocookie.net/__cb20131105162357/pokemon/images/8/84/Iceberg_Badge.png"></img></td>
                 </tr>
             </tr>
         </table>
@@ -171,15 +172,15 @@ export const Badges = () => {
                 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/3/30/Ghost_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/e/e3/GalarFairy_Badge.png"></img></td>
+                <td><img className ="badges" src="https://i2.wp.com/pokemythology.net/conteudo/galeria/insignias/galar6.png"></img></td>
 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/3/3e/Rock_Badge.png"></img></td>
+                <td><img className ="badges" src="https://cdn2.bulbagarden.net/upload/thumb/3/3e/Rock_Badge.png/100px-Rock_Badge.png"></img></td>
                 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/4/43/Ice_Badge.png"></img></td>
+                <td><img className ="badges" src="https://images.wikidexcdn.net/mwuploads/wikidex/5/5c/latest/20191117234308/Medalla_Hielo_EpEc.png"></img></td>
 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/4/4d/Dark_Badge.png"></img></td>
+                <td><img className ="badges" src="https://images.wikidexcdn.net/mwuploads/wikidex/b/b0/latest/20191117234310/Medalla_Siniestro_EpEc.png"></img></td>
 
-                <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/2/27/Dragon_Badge.png"></img></td>
+                <td><img className ="badges" src="https://images.wikidexcdn.net/mwuploads/wikidex/3/31/latest/20191117234312/Medalla_Drag%C3%B3n_EpEc.png"></img></td>
                 </tr>
             </tr>
         </table>
