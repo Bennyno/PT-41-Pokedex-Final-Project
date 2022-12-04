@@ -18,7 +18,7 @@ export const Login = () => {
   if(store.token && store.token != "" && store.token != undefined) navigate("/");
 
   return (
-    <div className="full-screen bg-home">
+    <div className="full-screen bg-login">
     <div className="container form">
       <div className="text-center mt-5">
         <h1 className="header">Log In</h1>

@@ -250,6 +250,12 @@ a {
   text-decoration: none;
 }
 /*Pokemon Game styles*/
+.bg-game {
+  background-image: url("https://wallpapercave.com/wp/YO5FMUT.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
 .game {
   margin-left: 15%;
 }
@@ -382,7 +388,7 @@ button:hover {
   height: 100%;
 }
 
-.bg-home {
+.bg-login {
   background-image: url("https://vignette.wikia.nocookie.net/fantendo/images/5/51/Pok%C3%A9mon_Stadium_2.jpg/revision/latest?cb=20141221100214");
   background-size: cover;
 }
@@ -431,7 +437,7 @@ button:hover {
 }
 
 /*styles for regions page*/
-.container {
+.container.all-regions {
   border: dashed 1px white;
   background-color: white;
 }
@@ -460,4 +466,42 @@ button:hover {
 
 .more-region-info {
   text-align: center;
+}
+
+/*Styles for Badges page*/
+.bg-badges {
+  background-image: url("https://wallpapercave.com/wp/YO5FMUT.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+table {
+  margin: auto;
+}
+
+table, th, td {
+  border:1px solid black;
+}
+.all-badges {
+  display: flex;
+  justify-content: center;
+}
+
+.badges {
+  width: 100px;
+}
+
+.table-title {
+  text-align: center;
+}
+
+.region-gyms {
+  margin-top: 10px;
+}
+
+.container.gym-badges {
+  border: 1px dashed white;
+  background-color: white;
+  height: 100vh;
 }

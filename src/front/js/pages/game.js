@@ -46,7 +46,7 @@ export const Game = () => {
   }
 
   return (
-    <>
+    <div className="full-screen bg-game">
       {/* Importing a custom Pokemon font. */}
       <style>
         @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
@@ -187,6 +187,6 @@ export const Game = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };

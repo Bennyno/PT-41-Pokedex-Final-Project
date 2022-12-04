@@ -6,7 +6,7 @@ export const Regions = () => {
     return (
         
         <div className="bg-region">
-        <div className="container">
+        <div className="container all-regions">
         <h1 className="page-title"><strong>Regions</strong></h1>
         
         <h2 className="region-name">Kanto</h2>

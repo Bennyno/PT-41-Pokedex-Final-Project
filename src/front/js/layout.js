@@ -10,7 +10,8 @@ import {Game} from "./pages/game.js";
 import { Login } from "./pages/login";
 import { SignUp } from "./pages/signup";
 import { Private } from "./pages/private";
-import { Regions } from "./pages/regions"
+import { Regions } from "./pages/regions";
+import { Badges } from "./pages/badges";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -31,6 +32,7 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Pokemon />} path="/pokemon/:id" />
                         <Route element={<Regions />} path="/regions" />
+                        <Route element={<Badges />} path="/badges" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Game />} path="/game" />
                         <Route element={<Login />} path="/login" />
