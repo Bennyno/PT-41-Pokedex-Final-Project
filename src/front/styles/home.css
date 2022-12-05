@@ -343,7 +343,7 @@ button:hover {
 }
 
 .newQuizButton {
-  background: none;
+  background: #fff;
   font-size: 25px;
   border: 2px solid red;
   padding: 10px 36px;
