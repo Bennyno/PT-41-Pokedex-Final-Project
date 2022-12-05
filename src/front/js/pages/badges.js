@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
+import Boulder from "../../img/Boulder_Badge.jpg";
 
 export const Badges = () => {
    
@@ -12,7 +13,7 @@ export const Badges = () => {
             </tr>
             <tr bgcolor="lightgray">
                 <tr>
-                <td><img className ="badges" src="https://cdn2.bulbagarden.net/upload/d/dd/Boulder_Badge.png"></img></td>
+                <td><img className ="badges" src={Boulder}></img></td>
                 
                 <td><img className ="badges" src="https://archives.bulbagarden.net/media/upload/thumb/9/9c/Cascade_Badge.png/900px-Cascade_Badge.png"></img></td>
                 

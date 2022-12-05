@@ -217,8 +217,6 @@ div.jumbotron {
 }
 
 div.grid {
-  /* float: right; 
- margin-right: 500px; */
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -378,6 +376,10 @@ button:hover {
   color: #3a5ea8;
   background-color: #ffcb05;
   overflow: visible;
+}
+
+.QuizHeader{
+  color: #ffcb05;
 }
 
 /*styles for login page*/

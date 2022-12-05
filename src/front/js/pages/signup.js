@@ -9,7 +9,7 @@ export const SignUp = (props) => {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="full-screen bg-home">
+    <div className="full-screen bg-login">
     <div className="container form">
       <div className="text-center mt-5">
         <h1 className="SIGNUP">Sign Up</h1>
