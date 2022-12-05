@@ -444,8 +444,10 @@ button:hover {
 
 .bg-region {
   background-image: url("https://images4.alphacoders.com/232/232838.jpg");
-  background-size: contain;
+  background-size:cover;
   background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .regions {
