@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import pokeApp from "../../img/logo.jpg";
 import { DropDownMenu } from "./dropdown";
+import { Searchbar } from "./searchbar";
+import Masterball from "../../img/master_ball.png"
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -14,6 +16,7 @@ export const Navbar = () => {
           <img className="pokemon-logo" src={pokeApp} />
         </Link>
       </div>
+      <Searchbar/>
       <div className="nav-pokeballs">
         {!store.token ? (
           <Link to="/login">
@@ -43,7 +46,7 @@ export const Navbar = () => {
           <Link to="/game">
             <button className="btn btn-primary">
               <img
-                src="https://jenessa-reika.ca/wp-content/uploads/2020/04/pokemon5-600x582.png"
+                src={Masterball}
                 className="ani-gscale ani-spin"
               />
               <div className="navbar-opts">Play Game!</div>
