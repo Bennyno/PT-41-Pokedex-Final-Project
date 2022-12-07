@@ -11,10 +11,7 @@ export const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-brand">
         <Link to="/">
-          <img
-            className="pokemon-logo"
-            src={pokeApp}
-          />
+          <img className="pokemon-logo" src={pokeApp} />
         </Link>
       </div>
       <div className="nav-pokeballs">
@@ -42,15 +39,27 @@ export const Navbar = () => {
             </button>
           </Link>
         )}
-        <Link to="/game">
-          <button className="btn btn-primary">
-            <img
-              src="https://jenessa-reika.ca/wp-content/uploads/2020/04/pokemon5-600x582.png"
-              className="ani-gscale ani-spin"
-            />
-            <div className="navbar-opts">Play Game!</div>
-          </button>
-        </Link>
+        {store.token && store.token != "" && store.token != undefined ? (
+          <Link to="/game">
+            <button className="btn btn-primary">
+              <img
+                src="https://jenessa-reika.ca/wp-content/uploads/2020/04/pokemon5-600x582.png"
+                className="ani-gscale ani-spin"
+              />
+              <div className="navbar-opts">Play Game!</div>
+            </button>
+          </Link>
+        ) : (
+          <Link style={{ pointerEvents: "none" }} to="/game">
+            <button className="btn btn-primary">
+              <img
+                src="https://jenessa-reika.ca/wp-content/uploads/2020/04/pokemon5-600x582.png"
+                className="ani-gscale ani-spin"
+              />
+              <div className="navbar-opts">Play Game!</div>
+            </button>
+          </Link>
+        )}
         <Link to="/regions">
           <button className="btn btn-primary">
             <img

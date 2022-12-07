@@ -4,9 +4,11 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const SignUp = (props) => {
+  const navigate = useNavigate();
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   return (
     <div className="full-screen bg-login">
@@ -37,7 +39,12 @@ export const SignUp = (props) => {
           <div>
           <button
             className="btn btn-primary signupbutton"
-            onClick={() => actions.signup(email, password)}
+            onClick={() =>{ if (email ==="" || password===""){
+              alert("Inputs cannot be empty.")
+            }else{
+              actions.signup(email, password) 
+              navigate("/login")
+            }}}
           >
             Sign Up
           </button>

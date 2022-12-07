@@ -28,9 +28,9 @@ export const PokemonCard = (props) => {
   const { store, actions } = useContext(Context);
   const typing = props.type.split(",");
 
-  const data = typing.map(types => {
-    return types.trim()
-  })
+  const data = typing.map((types) => {
+    return types.trim();
+  });
   // console.log(data);
 
   return (
@@ -42,35 +42,52 @@ export const PokemonCard = (props) => {
           <strong>Number:</strong> {props.index + 1}
         </p>
         <p className="card-text typing">
-        {data.map((type) => (
-          <span
-            key={type}
-            className="badge badge-pill mr-1"
-            style={{
-              backgroundColor: `#${TYPE_COLORS[type]}`,
-              color: "white",
-            }}
-          >
-            {type
-              .toLowerCase()
-              .split(" ")
-              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-              .join(" ")}
-          </span>
-        ))}
+          {data.map((type) => (
+            <span
+              key={type}
+              className="badge badge-pill mr-1"
+              style={{
+                backgroundColor: `#${TYPE_COLORS[type]}`,
+                color: "white",
+              }}
+            >
+              {type
+                .toLowerCase()
+                .split(" ")
+                .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+                .join(" ")}
+            </span>
+          ))}
         </p>
         <Link to={"/pokemon/" + props.index} className="btn btn-danger">
           Learn More
         </Link>
-        <button
-          className="pokeball-button"
-          onClick={() => actions.setFavorites({name:props.name, id:props.index})}
-        >
-          <img
-            className="pokeball"
-            src="https://assets.webiconspng.com/uploads/2017/09/Pokeball-PNG-Image-50419-150x150.png"
-          ></img>
-        </button>
+          {store.token && store.token != "" && store.token != undefined ? (
+            <button
+              className="pokeball-button"
+              onClick={() =>
+                actions.setFavorites({ name: props.name, id: props.index })
+              }
+            >
+              <img
+                className="pokeball"
+                src="https://assets.webiconspng.com/uploads/2017/09/Pokeball-PNG-Image-50419-150x150.png"
+              ></img>
+            </button>
+          ) : (
+            <button
+              disabled
+              className="pokeball-button"
+              onClick={() =>
+                actions.setFavorites({ name: props.name, id: props.index })
+              }
+            >
+              <img
+                className="pokeball"
+                src="https://assets.webiconspng.com/uploads/2017/09/Pokeball-PNG-Image-50419-150x150.png"
+              ></img>
+            </button>
+          )}
       </div>
     </div>
   );

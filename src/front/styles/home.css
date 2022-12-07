@@ -505,3 +505,7 @@ table, th, td {
   background-color: white;
   height: 100%;
 }
+
+.isDisabled {
+  cursor: not-allowed;
+}
