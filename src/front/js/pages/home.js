@@ -22,6 +22,7 @@ export const Home = () => {
       <h1 onClick={actions.getPokemon} className="page-title">
         <strong>Pokedex</strong>
       </h1>
+      {store.token && store.token != "" && store.token != undefined ? (
       <InfiniteScroll
         dataLength={store.pokemon.length} 
         next={load_pokemon}
@@ -44,6 +45,31 @@ export const Home = () => {
         })}
       </div>
       </InfiniteScroll>
+      ) : (
+        <InfiniteScroll
+        dataLength={store.pokemon.length} 
+        next={load_pokemon}
+        hasMore={store.pokemon.length < 100}
+        loader={<h4>Loading...</h4>}
+        >
+        <div className="card">
+        {store.pokemon.map((pokemon, index) => {
+          
+          return (
+            <PokemonCard
+              key={index}
+              image={pokemon.image}
+              name={pokemon.name}
+              type={pokemon.type}
+              flavor_text={pokemon.flavor_text}
+              index={index}
+            />
+          );
+        })}
+      </div>
+      </InfiniteScroll>
+      )
+      }
     </>
   );
 };
