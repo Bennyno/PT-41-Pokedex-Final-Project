@@ -8,9 +8,9 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
   const [ render, rerender] = useState(true)
 
-  useEffect(() => {
-    actions.getPokemon();
-  }, []);
+  // useEffect(() => {
+  //   actions.getPokemon();
+  // }, []);
 
   const load_pokemon = () => {
     actions.getPokemon();
