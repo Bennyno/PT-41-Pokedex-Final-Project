@@ -31,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (!id) {
           return;
         }
-        return fetch(`${process.env.BACKEND_URL}/api/pokemon/${id}/desc`)
+        return fetch(`https://3001-bennyno-pt41pokedexfina-l70dx2cgwgi.ws-us84.gitpod.io/api/pokemon/${id}/desc`)
           .then((resp) => resp.json())
           .then((data) => data);
       },
@@ -45,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           i <= Math.min(905, old_pokemon.length + 20);
           i++
         ) {
-          const url = `${process.env.BACKEND_URL}/api/pokemon/${i}`;
+          const url = `https://3001-bennyno-pt41pokedexfina-l70dx2cgwgi.ws-us84.gitpod.io/api/pokemon/${i}`;
           promises.push(fetch(url).then((res) => res.json()));
           console.log("Fetch request created", i);
         }
@@ -104,7 +104,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         try {
           const resp = await fetch(
-            `${process.env.BACKEND_URL}/api/login`,
+            `https://3001-bennyno-pt41pokedexfina-l70dx2cgwgi.ws-us84.gitpod.io/api/login`,
             opts
           );
           if (resp.status !== 200) {
@@ -121,7 +121,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       verifyUser: (token) => {
-        fetch(`${process.env.BACKEND_URL}/api/protected`, {
+        fetch(`https://3001-bennyno-pt41pokedexfina-l70dx2cgwgi.ws-us84.gitpod.io/api/protected`, {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         })
@@ -137,7 +137,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       signup: (email, password) => {
-        fetch(`${process.env.BACKEND_URL}/api/signup`, {
+        fetch(`https://3001-bennyno-pt41pokedexfina-l70dx2cgwgi.ws-us84.gitpod.io/api/signup`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: email, password: password }),
